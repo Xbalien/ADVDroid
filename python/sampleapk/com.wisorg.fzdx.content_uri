@@ -1,0 +1,5 @@
+content://com.wisorg.fzdx/favorites?notify=false
+content://telephony/carriers/preferapn
+content://com.android.contacts/
+content://
+content://com.wisorg.fzdx/favorites?notify=true

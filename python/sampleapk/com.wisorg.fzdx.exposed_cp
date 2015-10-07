@@ -1,0 +1,12 @@
+com.wisorg.providers.downloads.DownloadProvider
+com.wisorg.fzdx.provider.PlatformProvider
+com.wisorg.fzdx.receiver.AlarmReceiver
+com.wisorg.fzdx.receiver.BootReceiver
+com.wisorg.jslibrary.HybirdInstallActivity
+com.wisorg.identity.view.LoginActivity
+com.example.mydemo2.wxapi.WXEntryActivity
+com.wisorg.fzdx.activity.notice.NoticeSubscribeListActivity
+com.wisorg.fzdx.activity.weibo.WeiboSubscribeListActivity
+com.wisorg.fzdx.activity.ControlActvity
+com.wisorg.fzdx.activity.SplashActivity
+com.wisorg.fzdx.activity.news.NewsAggregationMainActivity

@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><APIMisuseResult><MisuseAPI Name="virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: java.io.FileOutputStream openFileOutput(java.lang.String,int)&gt;(&quot;text1&quot;, 0)"><InvokeFrom>&lt;com.test.sootapk.VulActivity: void onResume()&gt;</InvokeFrom><MisuseMethodBody>    protected void onResume()&#13;
+    {&#13;
+        com.test.sootapk.VulActivity $r0;
+        java.io.FileNotFoundException $r1;
+        android.content.Intent $r2, $r3;
+        java.lang.String $r4, $r5;
+        boolean $z0;
+        int $i0;
+        java.util.ArrayList $r6;
+        android.os.Parcelable $r7;
+
+        $r0 := @this: com.test.sootapk.VulActivity;
+
+        specialinvoke $r0.&lt;android.app.Activity: void onResume()&gt;();
+
+        $r3 = virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: android.content.Intent getIntent()&gt;();
+
+        $r2 = virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: android.content.Intent getIntent()&gt;();
+
+        $r4 = virtualinvoke $r2.&lt;android.content.Intent: java.lang.String getAction()&gt;();
+
+        $r5 = "action";
+
+        $z0 = virtualinvoke $r5.&lt;java.lang.String: boolean equals(java.lang.Object)&gt;($r4);
+
+        if $z0 == 0 goto label1;
+
+        $i0 = virtualinvoke $r3.&lt;android.content.Intent: int getIntExtra(java.lang.String,int)&gt;("int", 0);
+
+        if $i0 != 1 goto label1;
+
+        $r5 = virtualinvoke $r3.&lt;android.content.Intent: java.lang.String getStringExtra(java.lang.String)&gt;("string");
+
+        virtualinvoke $r5.&lt;java.lang.String: boolean equals(java.lang.Object)&gt;("string");
+
+     label1:
+        $r6 = virtualinvoke $r3.&lt;android.content.Intent: java.util.ArrayList getStringArrayListExtra(java.lang.String)&gt;("list");
+
+        if $r6 == null goto label2;
+
+        virtualinvoke $r6.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;(0);
+
+        virtualinvoke $r6.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;(1);
+
+     label2:
+        $r2 = null;
+
+        $r7 = virtualinvoke $r3.&lt;android.content.Intent: android.os.Parcelable getParcelableExtra(java.lang.String)&gt;("next_intent");
+
+        $z0 = $r7 instanceof android.content.Intent;
+
+        if $z0 == 0 goto label3;
+
+        $r2 = (android.content.Intent) $r7;
+
+     label3:
+        if $r2 == null goto label4;
+
+        virtualinvoke $r2.&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)&gt;("put_next_intent", 1);
+
+        virtualinvoke $r2.&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;("put_next_intent_string", "put_string");
+
+        virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: void startActivity(android.content.Intent)&gt;($r2);
+
+     label4:
+        virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: java.io.FileOutputStream openFileOutput(java.lang.String,int)&gt;("text1", 0);
+
+        virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)&gt;("share1", 0);
+
+        virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: android.database.sqlite.SQLiteDatabase openOrCreateDatabase(java.lang.String,int,android.database.sqlite.SQLiteDatabase$CursorFactory)&gt;("database", 1, null);
+
+     label5:
+        return;
+
+     label6:
+        $r1 := @caughtexception;
+
+        virtualinvoke $r1.&lt;java.io.FileNotFoundException: void printStackTrace()&gt;();
+
+        return;
+&#13;
+        catch java.io.FileNotFoundException from label4 to label5 with label6;&#13;
+    }&#13;
+</MisuseMethodBody></MisuseAPI><MisuseAPI Name="virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)&gt;(&quot;share1&quot;, 0)"><InvokeFrom>&lt;com.test.sootapk.VulActivity: void onResume()&gt;</InvokeFrom><MisuseMethodBody>    protected void onResume()&#13;
+    {&#13;
+        com.test.sootapk.VulActivity $r0;
+        java.io.FileNotFoundException $r1;
+        android.content.Intent $r2, $r3;
+        java.lang.String $r4, $r5;
+        boolean $z0;
+        int $i0;
+        java.util.ArrayList $r6;
+        android.os.Parcelable $r7;
+
+        $r0 := @this: com.test.sootapk.VulActivity;
+
+        specialinvoke $r0.&lt;android.app.Activity: void onResume()&gt;();
+
+        $r3 = virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: android.content.Intent getIntent()&gt;();
+
+        $r2 = virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: android.content.Intent getIntent()&gt;();
+
+        $r4 = virtualinvoke $r2.&lt;android.content.Intent: java.lang.String getAction()&gt;();
+
+        $r5 = "action";
+
+        $z0 = virtualinvoke $r5.&lt;java.lang.String: boolean equals(java.lang.Object)&gt;($r4);
+
+        if $z0 == 0 goto label1;
+
+        $i0 = virtualinvoke $r3.&lt;android.content.Intent: int getIntExtra(java.lang.String,int)&gt;("int", 0);
+
+        if $i0 != 1 goto label1;
+
+        $r5 = virtualinvoke $r3.&lt;android.content.Intent: java.lang.String getStringExtra(java.lang.String)&gt;("string");
+
+        virtualinvoke $r5.&lt;java.lang.String: boolean equals(java.lang.Object)&gt;("string");
+
+     label1:
+        $r6 = virtualinvoke $r3.&lt;android.content.Intent: java.util.ArrayList getStringArrayListExtra(java.lang.String)&gt;("list");
+
+        if $r6 == null goto label2;
+
+        virtualinvoke $r6.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;(0);
+
+        virtualinvoke $r6.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;(1);
+
+     label2:
+        $r2 = null;
+
+        $r7 = virtualinvoke $r3.&lt;android.content.Intent: android.os.Parcelable getParcelableExtra(java.lang.String)&gt;("next_intent");
+
+        $z0 = $r7 instanceof android.content.Intent;
+
+        if $z0 == 0 goto label3;
+
+        $r2 = (android.content.Intent) $r7;
+
+     label3:
+        if $r2 == null goto label4;
+
+        virtualinvoke $r2.&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)&gt;("put_next_intent", 1);
+
+        virtualinvoke $r2.&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;("put_next_intent_string", "put_string");
+
+        virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: void startActivity(android.content.Intent)&gt;($r2);
+
+     label4:
+        virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: java.io.FileOutputStream openFileOutput(java.lang.String,int)&gt;("text1", 0);
+
+        virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)&gt;("share1", 0);
+
+        virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: android.database.sqlite.SQLiteDatabase openOrCreateDatabase(java.lang.String,int,android.database.sqlite.SQLiteDatabase$CursorFactory)&gt;("database", 1, null);
+
+     label5:
+        return;
+
+     label6:
+        $r1 := @caughtexception;
+
+        virtualinvoke $r1.&lt;java.io.FileNotFoundException: void printStackTrace()&gt;();
+
+        return;
+&#13;
+        catch java.io.FileNotFoundException from label4 to label5 with label6;&#13;
+    }&#13;
+</MisuseMethodBody></MisuseAPI><MisuseAPI Name="virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: android.database.sqlite.SQLiteDatabase openOrCreateDatabase(java.lang.String,int,android.database.sqlite.SQLiteDatabase$CursorFactory)&gt;(&quot;database&quot;, 1, null)"><InvokeFrom>&lt;com.test.sootapk.VulActivity: void onResume()&gt;</InvokeFrom><MisuseMethodBody>    protected void onResume()&#13;
+    {&#13;
+        com.test.sootapk.VulActivity $r0;
+        java.io.FileNotFoundException $r1;
+        android.content.Intent $r2, $r3;
+        java.lang.String $r4, $r5;
+        boolean $z0;
+        int $i0;
+        java.util.ArrayList $r6;
+        android.os.Parcelable $r7;
+
+        $r0 := @this: com.test.sootapk.VulActivity;
+
+        specialinvoke $r0.&lt;android.app.Activity: void onResume()&gt;();
+
+        $r3 = virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: android.content.Intent getIntent()&gt;();
+
+        $r2 = virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: android.content.Intent getIntent()&gt;();
+
+        $r4 = virtualinvoke $r2.&lt;android.content.Intent: java.lang.String getAction()&gt;();
+
+        $r5 = "action";
+
+        $z0 = virtualinvoke $r5.&lt;java.lang.String: boolean equals(java.lang.Object)&gt;($r4);
+
+        if $z0 == 0 goto label1;
+
+        $i0 = virtualinvoke $r3.&lt;android.content.Intent: int getIntExtra(java.lang.String,int)&gt;("int", 0);
+
+        if $i0 != 1 goto label1;
+
+        $r5 = virtualinvoke $r3.&lt;android.content.Intent: java.lang.String getStringExtra(java.lang.String)&gt;("string");
+
+        virtualinvoke $r5.&lt;java.lang.String: boolean equals(java.lang.Object)&gt;("string");
+
+     label1:
+        $r6 = virtualinvoke $r3.&lt;android.content.Intent: java.util.ArrayList getStringArrayListExtra(java.lang.String)&gt;("list");
+
+        if $r6 == null goto label2;
+
+        virtualinvoke $r6.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;(0);
+
+        virtualinvoke $r6.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;(1);
+
+     label2:
+        $r2 = null;
+
+        $r7 = virtualinvoke $r3.&lt;android.content.Intent: android.os.Parcelable getParcelableExtra(java.lang.String)&gt;("next_intent");
+
+        $z0 = $r7 instanceof android.content.Intent;
+
+        if $z0 == 0 goto label3;
+
+        $r2 = (android.content.Intent) $r7;
+
+     label3:
+        if $r2 == null goto label4;
+
+        virtualinvoke $r2.&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)&gt;("put_next_intent", 1);
+
+        virtualinvoke $r2.&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;("put_next_intent_string", "put_string");
+
+        virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: void startActivity(android.content.Intent)&gt;($r2);
+
+     label4:
+        virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: java.io.FileOutputStream openFileOutput(java.lang.String,int)&gt;("text1", 0);
+
+        virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)&gt;("share1", 0);
+
+        virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: android.database.sqlite.SQLiteDatabase openOrCreateDatabase(java.lang.String,int,android.database.sqlite.SQLiteDatabase$CursorFactory)&gt;("database", 1, null);
+
+     label5:
+        return;
+
+     label6:
+        $r1 := @caughtexception;
+
+        virtualinvoke $r1.&lt;java.io.FileNotFoundException: void printStackTrace()&gt;();
+
+        return;
+&#13;
+        catch java.io.FileNotFoundException from label4 to label5 with label6;&#13;
+    }&#13;
+</MisuseMethodBody></MisuseAPI><MisuseAPI Name="virtualinvoke $r5.&lt;android.webkit.WebView: void removeJavascriptInterface(java.lang.String)&gt;(&quot;searchBoxJavaBridge_&quot;)"><InvokeFrom>&lt;com.test.sootapk.TestEntry: void onCreate(android.os.Bundle)&gt;</InvokeFrom><MisuseMethodBody>    protected void onCreate(android.os.Bundle)&#13;
+    {&#13;
+        com.test.sootapk.TestEntry $r0;
+        android.os.Bundle $r1;
+        java.security.KeyManagementException $r2;
+        java.lang.Object $r3;
+        android.view.View $r4;
+        android.webkit.WebView $r5;
+        android.webkit.WebSettings $r6;
+        java.security.UnrecoverableKeyException $r7;
+        java.security.NoSuchAlgorithmException $r8;
+        java.security.KeyStoreException $r9;
+
+        $r0 := @this: com.test.sootapk.TestEntry;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.&lt;android.app.Activity: void onCreate(android.os.Bundle)&gt;($r1);
+
+        virtualinvoke $r0.&lt;com.test.sootapk.TestEntry: void setContentView(int)&gt;(2130903040);
+
+        $r4 = virtualinvoke $r0.&lt;com.test.sootapk.TestEntry: android.view.View findViewById(int)&gt;(2131165185);
+
+        $r5 = (android.webkit.WebView) $r4;
+
+        $r0.&lt;com.test.sootapk.TestEntry: android.webkit.WebView wb&gt; = $r5;
+
+        $r5 = $r0.&lt;com.test.sootapk.TestEntry: android.webkit.WebView wb&gt;;
+
+        $r3 = new java.lang.Object;
+
+        specialinvoke $r3.&lt;java.lang.Object: void &lt;init&gt;()&gt;();
+
+        virtualinvoke $r5.&lt;android.webkit.WebView: void addJavascriptInterface(java.lang.Object,java.lang.String)&gt;($r3, "testSoot");
+
+        $r5 = $r0.&lt;com.test.sootapk.TestEntry: android.webkit.WebView wb&gt;;
+
+        virtualinvoke $r5.&lt;android.webkit.WebView: void removeJavascriptInterface(java.lang.String)&gt;("searchBoxJavaBridge_");
+
+        $r5 = $r0.&lt;com.test.sootapk.TestEntry: android.webkit.WebView wb&gt;;
+
+        $r6 = virtualinvoke $r5.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r6.&lt;android.webkit.WebSettings: void setAllowFileAccess(boolean)&gt;(1);
+
+        $r5 = $r0.&lt;com.test.sootapk.TestEntry: android.webkit.WebView wb&gt;;
+
+        $r6 = virtualinvoke $r5.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r6.&lt;android.webkit.WebSettings: void setSavePassword(boolean)&gt;(1);
+
+     label1:
+        virtualinvoke $r0.&lt;com.test.sootapk.TestEntry: void SMV()&gt;();
+
+     label2:
+        return;
+
+     label3:
+        $r2 := @caughtexception;
+
+        virtualinvoke $r2.&lt;java.security.KeyManagementException: void printStackTrace()&gt;();
+
+        return;
+
+     label4:
+        $r7 := @caughtexception;
+
+        virtualinvoke $r7.&lt;java.security.UnrecoverableKeyException: void printStackTrace()&gt;();
+
+        return;
+
+     label5:
+        $r8 := @caughtexception;
+
+        virtualinvoke $r8.&lt;java.security.NoSuchAlgorithmException: void printStackTrace()&gt;();
+
+        return;
+
+     label6:
+        $r9 := @caughtexception;
+
+        virtualinvoke $r9.&lt;java.security.KeyStoreException: void printStackTrace()&gt;();
+
+        return;
+&#13;
+        catch java.security.KeyManagementException from label1 to label2 with label3;&#13;
+        catch java.security.UnrecoverableKeyException from label1 to label2 with label4;&#13;
+        catch java.security.NoSuchAlgorithmException from label1 to label2 with label5;&#13;
+        catch java.security.KeyStoreException from label1 to label2 with label6;&#13;
+    }&#13;
+</MisuseMethodBody></MisuseAPI><MisuseAPI Name="virtualinvoke $r1.&lt;org.apache.http.conn.ssl.SSLSocketFactory: void setHostnameVerifier(org.apache.http.conn.ssl.X509HostnameVerifier)&gt;(org.apache.http.conn.ssl.X509HostnameVerifier ALLOW_ALL_HOSTNAME_VERIFIER&gt;)"><InvokeFrom>&lt;com.test.sootapk.TestEntry: void SMV()&gt;</InvokeFrom><MisuseMethodBody>    public void SMV() throws java.security.KeyManagementException, java.security.UnrecoverableKeyException, java.security.NoSuchAlgorithmException, java.security.KeyStoreException&#13;
+    {&#13;
+        com.test.sootapk.TestEntry $r0;
+        org.apache.http.conn.ssl.SSLSocketFactory $r1;
+        org.apache.http.conn.ssl.X509HostnameVerifier $r2;
+
+        $r0 := @this: com.test.sootapk.TestEntry;
+
+        $r1 = new org.apache.http.conn.ssl.SSLSocketFactory;
+
+        specialinvoke $r1.&lt;org.apache.http.conn.ssl.SSLSocketFactory: void &lt;init&gt;(java.security.KeyStore)&gt;(null);
+
+        $r2 = &lt;org.apache.http.conn.ssl.SSLSocketFactory: org.apache.http.conn.ssl.X509HostnameVerifier ALLOW_ALL_HOSTNAME_VERIFIER&gt;;
+
+        virtualinvoke $r1.&lt;org.apache.http.conn.ssl.SSLSocketFactory: void setHostnameVerifier(org.apache.http.conn.ssl.X509HostnameVerifier)&gt;($r2);
+
+        return;
+    }&#13;
+</MisuseMethodBody></MisuseAPI><MisuseAPI Name="virtualinvoke $r6.&lt;android.webkit.WebSettings: void setAllowFileAccess(boolean)&gt;(1)"><InvokeFrom>&lt;com.test.sootapk.TestEntry: void onCreate(android.os.Bundle)&gt;</InvokeFrom><MisuseMethodBody>    protected void onCreate(android.os.Bundle)&#13;
+    {&#13;
+        com.test.sootapk.TestEntry $r0;
+        android.os.Bundle $r1;
+        java.security.KeyManagementException $r2;
+        java.lang.Object $r3;
+        android.view.View $r4;
+        android.webkit.WebView $r5;
+        android.webkit.WebSettings $r6;
+        java.security.UnrecoverableKeyException $r7;
+        java.security.NoSuchAlgorithmException $r8;
+        java.security.KeyStoreException $r9;
+
+        $r0 := @this: com.test.sootapk.TestEntry;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.&lt;android.app.Activity: void onCreate(android.os.Bundle)&gt;($r1);
+
+        virtualinvoke $r0.&lt;com.test.sootapk.TestEntry: void setContentView(int)&gt;(2130903040);
+
+        $r4 = virtualinvoke $r0.&lt;com.test.sootapk.TestEntry: android.view.View findViewById(int)&gt;(2131165185);
+
+        $r5 = (android.webkit.WebView) $r4;
+
+        $r0.&lt;com.test.sootapk.TestEntry: android.webkit.WebView wb&gt; = $r5;
+
+        $r5 = $r0.&lt;com.test.sootapk.TestEntry: android.webkit.WebView wb&gt;;
+
+        $r3 = new java.lang.Object;
+
+        specialinvoke $r3.&lt;java.lang.Object: void &lt;init&gt;()&gt;();
+
+        virtualinvoke $r5.&lt;android.webkit.WebView: void addJavascriptInterface(java.lang.Object,java.lang.String)&gt;($r3, "testSoot");
+
+        $r5 = $r0.&lt;com.test.sootapk.TestEntry: android.webkit.WebView wb&gt;;
+
+        virtualinvoke $r5.&lt;android.webkit.WebView: void removeJavascriptInterface(java.lang.String)&gt;("searchBoxJavaBridge_");
+
+        $r5 = $r0.&lt;com.test.sootapk.TestEntry: android.webkit.WebView wb&gt;;
+
+        $r6 = virtualinvoke $r5.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r6.&lt;android.webkit.WebSettings: void setAllowFileAccess(boolean)&gt;(1);
+
+        $r5 = $r0.&lt;com.test.sootapk.TestEntry: android.webkit.WebView wb&gt;;
+
+        $r6 = virtualinvoke $r5.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r6.&lt;android.webkit.WebSettings: void setSavePassword(boolean)&gt;(1);
+
+     label1:
+        virtualinvoke $r0.&lt;com.test.sootapk.TestEntry: void SMV()&gt;();
+
+     label2:
+        return;
+
+     label3:
+        $r2 := @caughtexception;
+
+        virtualinvoke $r2.&lt;java.security.KeyManagementException: void printStackTrace()&gt;();
+
+        return;
+
+     label4:
+        $r7 := @caughtexception;
+
+        virtualinvoke $r7.&lt;java.security.UnrecoverableKeyException: void printStackTrace()&gt;();
+
+        return;
+
+     label5:
+        $r8 := @caughtexception;
+
+        virtualinvoke $r8.&lt;java.security.NoSuchAlgorithmException: void printStackTrace()&gt;();
+
+        return;
+
+     label6:
+        $r9 := @caughtexception;
+
+        virtualinvoke $r9.&lt;java.security.KeyStoreException: void printStackTrace()&gt;();
+
+        return;
+&#13;
+        catch java.security.KeyManagementException from label1 to label2 with label3;&#13;
+        catch java.security.UnrecoverableKeyException from label1 to label2 with label4;&#13;
+        catch java.security.NoSuchAlgorithmException from label1 to label2 with label5;&#13;
+        catch java.security.KeyStoreException from label1 to label2 with label6;&#13;
+    }&#13;
+</MisuseMethodBody></MisuseAPI><MisuseAPI Name="virtualinvoke $r6.&lt;android.webkit.WebSettings: void setSavePassword(boolean)&gt;(1)"><InvokeFrom>&lt;com.test.sootapk.TestEntry: void onCreate(android.os.Bundle)&gt;</InvokeFrom><MisuseMethodBody>    protected void onCreate(android.os.Bundle)&#13;
+    {&#13;
+        com.test.sootapk.TestEntry $r0;
+        android.os.Bundle $r1;
+        java.security.KeyManagementException $r2;
+        java.lang.Object $r3;
+        android.view.View $r4;
+        android.webkit.WebView $r5;
+        android.webkit.WebSettings $r6;
+        java.security.UnrecoverableKeyException $r7;
+        java.security.NoSuchAlgorithmException $r8;
+        java.security.KeyStoreException $r9;
+
+        $r0 := @this: com.test.sootapk.TestEntry;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.&lt;android.app.Activity: void onCreate(android.os.Bundle)&gt;($r1);
+
+        virtualinvoke $r0.&lt;com.test.sootapk.TestEntry: void setContentView(int)&gt;(2130903040);
+
+        $r4 = virtualinvoke $r0.&lt;com.test.sootapk.TestEntry: android.view.View findViewById(int)&gt;(2131165185);
+
+        $r5 = (android.webkit.WebView) $r4;
+
+        $r0.&lt;com.test.sootapk.TestEntry: android.webkit.WebView wb&gt; = $r5;
+
+        $r5 = $r0.&lt;com.test.sootapk.TestEntry: android.webkit.WebView wb&gt;;
+
+        $r3 = new java.lang.Object;
+
+        specialinvoke $r3.&lt;java.lang.Object: void &lt;init&gt;()&gt;();
+
+        virtualinvoke $r5.&lt;android.webkit.WebView: void addJavascriptInterface(java.lang.Object,java.lang.String)&gt;($r3, "testSoot");
+
+        $r5 = $r0.&lt;com.test.sootapk.TestEntry: android.webkit.WebView wb&gt;;
+
+        virtualinvoke $r5.&lt;android.webkit.WebView: void removeJavascriptInterface(java.lang.String)&gt;("searchBoxJavaBridge_");
+
+        $r5 = $r0.&lt;com.test.sootapk.TestEntry: android.webkit.WebView wb&gt;;
+
+        $r6 = virtualinvoke $r5.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r6.&lt;android.webkit.WebSettings: void setAllowFileAccess(boolean)&gt;(1);
+
+        $r5 = $r0.&lt;com.test.sootapk.TestEntry: android.webkit.WebView wb&gt;;
+
+        $r6 = virtualinvoke $r5.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r6.&lt;android.webkit.WebSettings: void setSavePassword(boolean)&gt;(1);
+
+     label1:
+        virtualinvoke $r0.&lt;com.test.sootapk.TestEntry: void SMV()&gt;();
+
+     label2:
+        return;
+
+     label3:
+        $r2 := @caughtexception;
+
+        virtualinvoke $r2.&lt;java.security.KeyManagementException: void printStackTrace()&gt;();
+
+        return;
+
+     label4:
+        $r7 := @caughtexception;
+
+        virtualinvoke $r7.&lt;java.security.UnrecoverableKeyException: void printStackTrace()&gt;();
+
+        return;
+
+     label5:
+        $r8 := @caughtexception;
+
+        virtualinvoke $r8.&lt;java.security.NoSuchAlgorithmException: void printStackTrace()&gt;();
+
+        return;
+
+     label6:
+        $r9 := @caughtexception;
+
+        virtualinvoke $r9.&lt;java.security.KeyStoreException: void printStackTrace()&gt;();
+
+        return;
+&#13;
+        catch java.security.KeyManagementException from label1 to label2 with label3;&#13;
+        catch java.security.UnrecoverableKeyException from label1 to label2 with label4;&#13;
+        catch java.security.NoSuchAlgorithmException from label1 to label2 with label5;&#13;
+        catch java.security.KeyStoreException from label1 to label2 with label6;&#13;
+    }&#13;
+</MisuseMethodBody></MisuseAPI><MisuseAPI Name="virtualinvoke $r5.&lt;android.webkit.WebView: void addJavascriptInterface(java.lang.Object,java.lang.String)&gt;($r3, &quot;testSoot&quot;)"><InvokeFrom>&lt;com.test.sootapk.TestEntry: void onCreate(android.os.Bundle)&gt;</InvokeFrom><MisuseMethodBody>    protected void onCreate(android.os.Bundle)&#13;
+    {&#13;
+        com.test.sootapk.TestEntry $r0;
+        android.os.Bundle $r1;
+        java.security.KeyManagementException $r2;
+        java.lang.Object $r3;
+        android.view.View $r4;
+        android.webkit.WebView $r5;
+        android.webkit.WebSettings $r6;
+        java.security.UnrecoverableKeyException $r7;
+        java.security.NoSuchAlgorithmException $r8;
+        java.security.KeyStoreException $r9;
+
+        $r0 := @this: com.test.sootapk.TestEntry;
+
+        $r1 := @parameter0: android.os.Bundle;
+
+        specialinvoke $r0.&lt;android.app.Activity: void onCreate(android.os.Bundle)&gt;($r1);
+
+        virtualinvoke $r0.&lt;com.test.sootapk.TestEntry: void setContentView(int)&gt;(2130903040);
+
+        $r4 = virtualinvoke $r0.&lt;com.test.sootapk.TestEntry: android.view.View findViewById(int)&gt;(2131165185);
+
+        $r5 = (android.webkit.WebView) $r4;
+
+        $r0.&lt;com.test.sootapk.TestEntry: android.webkit.WebView wb&gt; = $r5;
+
+        $r5 = $r0.&lt;com.test.sootapk.TestEntry: android.webkit.WebView wb&gt;;
+
+        $r3 = new java.lang.Object;
+
+        specialinvoke $r3.&lt;java.lang.Object: void &lt;init&gt;()&gt;();
+
+        virtualinvoke $r5.&lt;android.webkit.WebView: void addJavascriptInterface(java.lang.Object,java.lang.String)&gt;($r3, "testSoot");
+
+        $r5 = $r0.&lt;com.test.sootapk.TestEntry: android.webkit.WebView wb&gt;;
+
+        virtualinvoke $r5.&lt;android.webkit.WebView: void removeJavascriptInterface(java.lang.String)&gt;("searchBoxJavaBridge_");
+
+        $r5 = $r0.&lt;com.test.sootapk.TestEntry: android.webkit.WebView wb&gt;;
+
+        $r6 = virtualinvoke $r5.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r6.&lt;android.webkit.WebSettings: void setAllowFileAccess(boolean)&gt;(1);
+
+        $r5 = $r0.&lt;com.test.sootapk.TestEntry: android.webkit.WebView wb&gt;;
+
+        $r6 = virtualinvoke $r5.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r6.&lt;android.webkit.WebSettings: void setSavePassword(boolean)&gt;(1);
+
+     label1:
+        virtualinvoke $r0.&lt;com.test.sootapk.TestEntry: void SMV()&gt;();
+
+     label2:
+        return;
+
+     label3:
+        $r2 := @caughtexception;
+
+        virtualinvoke $r2.&lt;java.security.KeyManagementException: void printStackTrace()&gt;();
+
+        return;
+
+     label4:
+        $r7 := @caughtexception;
+
+        virtualinvoke $r7.&lt;java.security.UnrecoverableKeyException: void printStackTrace()&gt;();
+
+        return;
+
+     label5:
+        $r8 := @caughtexception;
+
+        virtualinvoke $r8.&lt;java.security.NoSuchAlgorithmException: void printStackTrace()&gt;();
+
+        return;
+
+     label6:
+        $r9 := @caughtexception;
+
+        virtualinvoke $r9.&lt;java.security.KeyStoreException: void printStackTrace()&gt;();
+
+        return;
+&#13;
+        catch java.security.KeyManagementException from label1 to label2 with label3;&#13;
+        catch java.security.UnrecoverableKeyException from label1 to label2 with label4;&#13;
+        catch java.security.NoSuchAlgorithmException from label1 to label2 with label5;&#13;
+        catch java.security.KeyStoreException from label1 to label2 with label6;&#13;
+    }&#13;
+</MisuseMethodBody></MisuseAPI></APIMisuseResult>

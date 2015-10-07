@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="lib/axml-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.7.5.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-simple-1.7.5.jar"/>
+	<classpathentry kind="lib" path="lib/soot-infoflow.jar"/>
+	<classpathentry kind="lib" path="lib/soot-trunk.jar"/>
+	<classpathentry kind="lib" path="lib/json_jar_lib/commons-beanutils-1.8.3.jar"/>
+	<classpathentry kind="lib" path="lib/json_jar_lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/json_jar_lib/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="lib/json_jar_lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/json_jar_lib/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="lib/json_jar_lib/ezmorph-1.0.6.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/soot-infoflow-android"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

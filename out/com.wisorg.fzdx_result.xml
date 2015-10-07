@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><APIMisuseResult><MisuseAPI Name="virtualinvoke $r3.&lt;android.webkit.WebSettings: void setAllowFileAccess(boolean)&gt;(1)"><InvokeFrom>&lt;com.wisorg.fzdx.activity.common.WebViewActivity: void fillView()&gt;</InvokeFrom><MisuseMethodBody>    private void fillView()&#13;
+    {&#13;
+        com.wisorg.fzdx.activity.common.WebViewActivity $r0;
+        com.wisorg.fzdx.activity.common.WebViewActivity$1 $r1;
+        android.widget.LinearLayout$LayoutParams $r2;
+        android.webkit.WebSettings $r3;
+        android.webkit.WebView $r4;
+        android.widget.LinearLayout $r5;
+        android.webkit.WebSettings$PluginState $r6;
+        com.wisorg.fzdx.activity.common.WebViewActivity$2 $r7;
+        com.wisorg.fzdx.activity.common.WebViewActivity$3 $r8;
+        com.wisorg.fzdx.activity.common.WebViewActivity$4 $r9;
+        com.wisorg.fzdx.log.LogUtil $r10;
+        java.lang.String $r11;
+
+        $r0 := @this: com.wisorg.fzdx.activity.common.WebViewActivity;
+
+        $r1 = new com.wisorg.fzdx.activity.common.WebViewActivity$1;
+
+        specialinvoke $r1.&lt;com.wisorg.fzdx.activity.common.WebViewActivity$1: void &lt;init&gt;(com.wisorg.fzdx.activity.common.WebViewActivity,android.content.Context)&gt;($r0, $r0);
+
+        $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: android.webkit.WebView webview&gt; = $r1;
+
+        $r4 = $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: android.webkit.WebView webview&gt;;
+
+        $r2 = new android.widget.LinearLayout$LayoutParams;
+
+        specialinvoke $r2.&lt;android.widget.LinearLayout$LayoutParams: void &lt;init&gt;(int,int)&gt;(-1, -1);
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: void setLayoutParams(android.view.ViewGroup$LayoutParams)&gt;($r2);
+
+        $r4 = $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: android.webkit.WebView webview&gt;;
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: void setScrollBarStyle(int)&gt;(33554432);
+
+        $r5 = $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: android.widget.LinearLayout layout&gt;;
+
+        $r4 = $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: android.webkit.WebView webview&gt;;
+
+        virtualinvoke $r5.&lt;android.widget.LinearLayout: void addView(android.view.View)&gt;($r4);
+
+        $r4 = $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: android.webkit.WebView webview&gt;;
+
+        $r3 = virtualinvoke $r4.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r3.&lt;android.webkit.WebSettings: void setAllowFileAccess(boolean)&gt;(1);
+
+        $r4 = $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: android.webkit.WebView webview&gt;;
+
+        $r3 = virtualinvoke $r4.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r3.&lt;android.webkit.WebSettings: void setPluginsEnabled(boolean)&gt;(1);
+
+        $r4 = $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: android.webkit.WebView webview&gt;;
+
+        $r3 = virtualinvoke $r4.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        $r6 = &lt;android.webkit.WebSettings$PluginState: android.webkit.WebSettings$PluginState ON&gt;;
+
+        virtualinvoke $r3.&lt;android.webkit.WebSettings: void setPluginState(android.webkit.WebSettings$PluginState)&gt;($r6);
+
+        $r4 = $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: android.webkit.WebView webview&gt;;
+
+        $r3 = virtualinvoke $r4.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r3.&lt;android.webkit.WebSettings: void setJavaScriptEnabled(boolean)&gt;(1);
+
+        $r4 = $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: android.webkit.WebView webview&gt;;
+
+        $r3 = virtualinvoke $r4.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r3.&lt;android.webkit.WebSettings: void setCacheMode(int)&gt;(2);
+
+        $r4 = $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: android.webkit.WebView webview&gt;;
+
+        $r3 = virtualinvoke $r4.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r3.&lt;android.webkit.WebSettings: void setSupportMultipleWindows(boolean)&gt;(1);
+
+        $r4 = $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: android.webkit.WebView webview&gt;;
+
+        $r3 = virtualinvoke $r4.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r3.&lt;android.webkit.WebSettings: void setUseWideViewPort(boolean)&gt;(1);
+
+        $r4 = $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: android.webkit.WebView webview&gt;;
+
+        $r3 = virtualinvoke $r4.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r3.&lt;android.webkit.WebSettings: void setLoadWithOverviewMode(boolean)&gt;(1);
+
+        $r4 = $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: android.webkit.WebView webview&gt;;
+
+        $r3 = virtualinvoke $r4.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r3.&lt;android.webkit.WebSettings: void setSupportZoom(boolean)&gt;(1);
+
+        $r4 = $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: android.webkit.WebView webview&gt;;
+
+        $r3 = virtualinvoke $r4.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r3.&lt;android.webkit.WebSettings: void setBuiltInZoomControls(boolean)&gt;(1);
+
+        $r4 = $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: android.webkit.WebView webview&gt;;
+
+        $r7 = new com.wisorg.fzdx.activity.common.WebViewActivity$2;
+
+        specialinvoke $r7.&lt;com.wisorg.fzdx.activity.common.WebViewActivity$2: void &lt;init&gt;(com.wisorg.fzdx.activity.common.WebViewActivity)&gt;($r0);
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: void setDownloadListener(android.webkit.DownloadListener)&gt;($r7);
+
+        $r4 = $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: android.webkit.WebView webview&gt;;
+
+        $r8 = new com.wisorg.fzdx.activity.common.WebViewActivity$3;
+
+        specialinvoke $r8.&lt;com.wisorg.fzdx.activity.common.WebViewActivity$3: void &lt;init&gt;(com.wisorg.fzdx.activity.common.WebViewActivity)&gt;($r0);
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: void setWebViewClient(android.webkit.WebViewClient)&gt;($r8);
+
+        $r4 = $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: android.webkit.WebView webview&gt;;
+
+        $r9 = new com.wisorg.fzdx.activity.common.WebViewActivity$4;
+
+        specialinvoke $r9.&lt;com.wisorg.fzdx.activity.common.WebViewActivity$4: void &lt;init&gt;(com.wisorg.fzdx.activity.common.WebViewActivity)&gt;($r0);
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: void setWebChromeClient(android.webkit.WebChromeClient)&gt;($r9);
+
+        $r10 = staticinvoke &lt;com.wisorg.fzdx.log.LogUtil: com.wisorg.fzdx.log.LogUtil getLogger()&gt;();
+
+        $r11 = $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: java.lang.String url&gt;;
+
+        virtualinvoke $r10.&lt;com.wisorg.fzdx.log.LogUtil: void d(java.lang.Object)&gt;($r11);
+
+        $r4 = $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: android.webkit.WebView webview&gt;;
+
+        $r11 = $r0.&lt;com.wisorg.fzdx.activity.common.WebViewActivity: java.lang.String url&gt;;
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: void loadUrl(java.lang.String)&gt;($r11);
+
+        return;
+    }&#13;
+</MisuseMethodBody></MisuseAPI><MisuseAPI Name="virtualinvoke $r5.&lt;android.webkit.WebSettings: void setAllowFileAccess(boolean)&gt;(1)"><InvokeFrom>&lt;com.wisorg.jslibrary.DetailActivity: void setWebView()&gt;</InvokeFrom><MisuseMethodBody>    private void setWebView()&#13;
+    {&#13;
+        com.wisorg.jslibrary.DetailActivity $r0;
+        java.lang.String $r1;
+        boolean $z0;
+        android.widget.LinearLayout $r2;
+        android.content.Intent $r3;
+        android.webkit.WebView $r4;
+        android.webkit.WebSettings $r5;
+        java.lang.Class $r6;
+        java.lang.Exception $r7;
+
+        $r0 := @this: com.wisorg.jslibrary.DetailActivity;
+
+        $r1 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: java.lang.String mUrl&gt;;
+
+        if $r1 == null goto label1;
+
+        $r1 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: java.lang.String mUrl&gt;;
+
+        $z0 = virtualinvoke $r1.&lt;java.lang.String: boolean startsWith(java.lang.String)&gt;("http");
+
+        if $z0 == 0 goto label1;
+
+        $r2 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.widget.LinearLayout mProgressBar&gt;;
+
+        virtualinvoke $r2.&lt;android.widget.LinearLayout: void setVisibility(int)&gt;(0);
+
+     label1:
+        $r3 = virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.content.Intent getIntent()&gt;();
+
+        $r1 = virtualinvoke $r3.&lt;android.content.Intent: java.lang.String getStringExtra(java.lang.String)&gt;("callbackparms");
+
+        $r0.&lt;com.wisorg.jslibrary.DetailActivity: java.lang.String callbackparms&gt; = $r1;
+
+     label2:
+        $r4 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        $r5 = virtualinvoke $r4.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setJavaScriptEnabled(boolean)&gt;(1);
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setUseWideViewPort(boolean)&gt;(1);
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setLoadWithOverviewMode(boolean)&gt;(1);
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setAllowFileAccess(boolean)&gt;(1);
+
+        $r6 = virtualinvoke $r5.&lt;java.lang.Object: java.lang.Class getClass()&gt;();
+
+        $z0 = virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: boolean getMethodIsExit(java.lang.Class,java.lang.String)&gt;($r6, "setAllowFileAccessFromFileURLs");
+
+        if $z0 == 0 goto label3;
+
+        $r6 = virtualinvoke $r5.&lt;java.lang.Object: java.lang.Class getClass()&gt;();
+
+        $z0 = virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: boolean getMethodIsExit(java.lang.Class,java.lang.String)&gt;($r6, "setAllowUniversalAccessFromFileURLs");
+
+        if $z0 == 0 goto label3;
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setAllowFileAccessFromFileURLs(boolean)&gt;(1);
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setAllowUniversalAccessFromFileURLs(boolean)&gt;(1);
+
+     label3:
+        $r4 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: void addJavascriptInterface(java.lang.Object,java.lang.String)&gt;($r0, "android");
+
+        $r4 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: void setVisibility(int)&gt;(0);
+
+        $r4 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: boolean requestFocus()&gt;();
+
+        virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: void showAlert()&gt;();
+
+        $r4 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        $r1 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: java.lang.String mUrl&gt;;
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: void loadUrl(java.lang.String)&gt;($r1);
+
+        return;
+
+     label4:
+        $r7 := @caughtexception;
+
+        goto label2;
+&#13;
+        catch java.lang.Exception from label1 to label2 with label4;&#13;
+    }&#13;
+</MisuseMethodBody></MisuseAPI><MisuseAPI Name="virtualinvoke $r0.&lt;org.apache.http.conn.ssl.SSLSocketFactory: void setHostnameVerifier(org.apache.http.conn.ssl.X509HostnameVerifier)&gt;(org.apache.http.conn.ssl.X509HostnameVerifier ALLOW_ALL_HOSTNAME_VERIFIER&gt;)"><InvokeFrom>&lt;com.loopj.android.http.MySSLSocketFactory: org.apache.http.conn.ssl.SSLSocketFactory getFixedSocketFactory()&gt;</InvokeFrom><MisuseMethodBody>    public static org.apache.http.conn.ssl.SSLSocketFactory getFixedSocketFactory()&#13;
+    {&#13;
+        com.loopj.android.http.MySSLSocketFactory $r0;
+        java.lang.Throwable $r1;
+        java.security.KeyStore $r2;
+        org.apache.http.conn.ssl.X509HostnameVerifier $r3;
+        org.apache.http.conn.ssl.SSLSocketFactory $r4;
+
+     label1:
+        $r0 = new com.loopj.android.http.MySSLSocketFactory;
+
+        $r2 = staticinvoke &lt;com.loopj.android.http.MySSLSocketFactory: java.security.KeyStore getKeystore()&gt;();
+
+        specialinvoke $r0.&lt;com.loopj.android.http.MySSLSocketFactory: void &lt;init&gt;(java.security.KeyStore)&gt;($r2);
+
+        $r3 = &lt;org.apache.http.conn.ssl.SSLSocketFactory: org.apache.http.conn.ssl.X509HostnameVerifier ALLOW_ALL_HOSTNAME_VERIFIER&gt;;
+
+        virtualinvoke $r0.&lt;org.apache.http.conn.ssl.SSLSocketFactory: void setHostnameVerifier(org.apache.http.conn.ssl.X509HostnameVerifier)&gt;($r3);
+
+     label2:
+        return $r0;
+
+     label3:
+        $r1 := @caughtexception;
+
+        virtualinvoke $r1.&lt;java.lang.Throwable: void printStackTrace()&gt;();
+
+        $r4 = staticinvoke &lt;org.apache.http.conn.ssl.SSLSocketFactory: org.apache.http.conn.ssl.SSLSocketFactory getSocketFactory()&gt;();
+
+        return $r4;
+&#13;
+        catch java.lang.Throwable from label1 to label2 with label3;&#13;
+    }&#13;
+</MisuseMethodBody></MisuseAPI><MisuseAPI Name="virtualinvoke $r5.&lt;android.webkit.WebSettings: void setAllowFileAccessFromFileURLs(boolean)&gt;(1)"><InvokeFrom>&lt;com.wisorg.jslibrary.DetailActivity: void setWebView()&gt;</InvokeFrom><MisuseMethodBody>    private void setWebView()&#13;
+    {&#13;
+        com.wisorg.jslibrary.DetailActivity $r0;
+        java.lang.String $r1;
+        boolean $z0;
+        android.widget.LinearLayout $r2;
+        android.content.Intent $r3;
+        android.webkit.WebView $r4;
+        android.webkit.WebSettings $r5;
+        java.lang.Class $r6;
+        java.lang.Exception $r7;
+
+        $r0 := @this: com.wisorg.jslibrary.DetailActivity;
+
+        $r1 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: java.lang.String mUrl&gt;;
+
+        if $r1 == null goto label1;
+
+        $r1 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: java.lang.String mUrl&gt;;
+
+        $z0 = virtualinvoke $r1.&lt;java.lang.String: boolean startsWith(java.lang.String)&gt;("http");
+
+        if $z0 == 0 goto label1;
+
+        $r2 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.widget.LinearLayout mProgressBar&gt;;
+
+        virtualinvoke $r2.&lt;android.widget.LinearLayout: void setVisibility(int)&gt;(0);
+
+     label1:
+        $r3 = virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.content.Intent getIntent()&gt;();
+
+        $r1 = virtualinvoke $r3.&lt;android.content.Intent: java.lang.String getStringExtra(java.lang.String)&gt;("callbackparms");
+
+        $r0.&lt;com.wisorg.jslibrary.DetailActivity: java.lang.String callbackparms&gt; = $r1;
+
+     label2:
+        $r4 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        $r5 = virtualinvoke $r4.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setJavaScriptEnabled(boolean)&gt;(1);
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setUseWideViewPort(boolean)&gt;(1);
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setLoadWithOverviewMode(boolean)&gt;(1);
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setAllowFileAccess(boolean)&gt;(1);
+
+        $r6 = virtualinvoke $r5.&lt;java.lang.Object: java.lang.Class getClass()&gt;();
+
+        $z0 = virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: boolean getMethodIsExit(java.lang.Class,java.lang.String)&gt;($r6, "setAllowFileAccessFromFileURLs");
+
+        if $z0 == 0 goto label3;
+
+        $r6 = virtualinvoke $r5.&lt;java.lang.Object: java.lang.Class getClass()&gt;();
+
+        $z0 = virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: boolean getMethodIsExit(java.lang.Class,java.lang.String)&gt;($r6, "setAllowUniversalAccessFromFileURLs");
+
+        if $z0 == 0 goto label3;
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setAllowFileAccessFromFileURLs(boolean)&gt;(1);
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setAllowUniversalAccessFromFileURLs(boolean)&gt;(1);
+
+     label3:
+        $r4 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: void addJavascriptInterface(java.lang.Object,java.lang.String)&gt;($r0, "android");
+
+        $r4 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: void setVisibility(int)&gt;(0);
+
+        $r4 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: boolean requestFocus()&gt;();
+
+        virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: void showAlert()&gt;();
+
+        $r4 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        $r1 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: java.lang.String mUrl&gt;;
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: void loadUrl(java.lang.String)&gt;($r1);
+
+        return;
+
+     label4:
+        $r7 := @caughtexception;
+
+        goto label2;
+&#13;
+        catch java.lang.Exception from label1 to label2 with label4;&#13;
+    }&#13;
+</MisuseMethodBody></MisuseAPI><MisuseAPI Name="$r4 = virtualinvoke $r0.&lt;org.androidpn.push.PushService: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)&gt;(&quot;xmpp_config&quot;, 0)"><InvokeFrom>&lt;org.androidpn.push.PushService: void onCreate()&gt;</InvokeFrom><MisuseMethodBody>    public void onCreate()&#13;
+    {&#13;
+        org.androidpn.push.PushService $r0;
+        java.lang.Object[] $r1;
+        java.lang.String $r2;
+        java.lang.StringBuilder $r3;
+        android.content.SharedPreferences $r4;
+        org.androidpn.push.PushService$InnerHandler $r5;
+        java.util.HashMap $r6;
+        java.lang.Object $r7;
+        android.telephony.TelephonyManager $r8;
+
+        $r0 := @this: org.androidpn.push.PushService;
+
+        $r1 = newarray (java.lang.Object)[0];
+
+        staticinvoke &lt;org.androidpn.push.config.L: void d(java.lang.String,java.lang.Object[])&gt;("onCreate()...", $r1);
+
+        $r3 = new java.lang.StringBuilder;
+
+        specialinvoke $r3.&lt;java.lang.StringBuilder: void &lt;init&gt;(java.lang.String)&gt;("packagename = ");
+
+        $r2 = virtualinvoke $r0.&lt;org.androidpn.push.PushService: java.lang.String getPackageName()&gt;();
+
+        $r3 = virtualinvoke $r3.&lt;java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)&gt;($r2);
+
+        $r2 = virtualinvoke $r3.&lt;java.lang.StringBuilder: java.lang.String toString()&gt;();
+
+        $r1 = newarray (java.lang.Object)[0];
+
+        staticinvoke &lt;org.androidpn.push.config.L: void d(java.lang.String,java.lang.Object[])&gt;($r2, $r1);
+
+        $r4 = virtualinvoke $r0.&lt;org.androidpn.push.PushService: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)&gt;("xmpp_config", 0);
+
+        $r0.&lt;org.androidpn.push.PushService: android.content.SharedPreferences preferences&gt; = $r4;
+
+        $r5 = new org.androidpn.push.PushService$InnerHandler;
+
+        specialinvoke $r5.&lt;org.androidpn.push.PushService$InnerHandler: void &lt;init&gt;(org.androidpn.push.PushService,org.androidpn.push.PushService$InnerHandler)&gt;($r0, null);
+
+        $r0.&lt;org.androidpn.push.PushService: android.os.Handler handler&gt; = $r5;
+
+        $r6 = new java.util.HashMap;
+
+        specialinvoke $r6.&lt;java.util.HashMap: void &lt;init&gt;()&gt;();
+
+        $r0.&lt;org.androidpn.push.PushService: java.util.HashMap xmppManagers&gt; = $r6;
+
+        $r7 = virtualinvoke $r0.&lt;org.androidpn.push.PushService: java.lang.Object getSystemService(java.lang.String)&gt;("phone");
+
+        $r8 = (android.telephony.TelephonyManager) $r7;
+
+        $r0.&lt;org.androidpn.push.PushService: android.telephony.TelephonyManager telephonyManager&gt; = $r8;
+
+        $r2 = staticinvoke &lt;org.androidpn.push.config.AppUtils: java.lang.String getDeviceId(android.content.Context)&gt;($r0);
+
+        $r0.&lt;org.androidpn.push.PushService: java.lang.String deviceId&gt; = $r2;
+
+        $r3 = new java.lang.StringBuilder;
+
+        specialinvoke $r3.&lt;java.lang.StringBuilder: void &lt;init&gt;(java.lang.String)&gt;("deviceId=");
+
+        $r2 = $r0.&lt;org.androidpn.push.PushService: java.lang.String deviceId&gt;;
+
+        $r3 = virtualinvoke $r3.&lt;java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)&gt;($r2);
+
+        $r2 = virtualinvoke $r3.&lt;java.lang.StringBuilder: java.lang.String toString()&gt;();
+
+        $r1 = newarray (java.lang.Object)[0];
+
+        staticinvoke &lt;org.androidpn.push.config.L: void d(java.lang.String,java.lang.Object[])&gt;($r2, $r1);
+
+        specialinvoke $r0.&lt;org.androidpn.push.PushService: void registerConnectivityReceiver()&gt;();
+
+        return;
+    }&#13;
+</MisuseMethodBody></MisuseAPI><MisuseAPI Name="virtualinvoke $r5.&lt;android.webkit.WebSettings: void setAllowUniversalAccessFromFileURLs(boolean)&gt;(1)"><InvokeFrom>&lt;com.wisorg.jslibrary.DetailActivity: void setWebView()&gt;</InvokeFrom><MisuseMethodBody>    private void setWebView()&#13;
+    {&#13;
+        com.wisorg.jslibrary.DetailActivity $r0;
+        java.lang.String $r1;
+        boolean $z0;
+        android.widget.LinearLayout $r2;
+        android.content.Intent $r3;
+        android.webkit.WebView $r4;
+        android.webkit.WebSettings $r5;
+        java.lang.Class $r6;
+        java.lang.Exception $r7;
+
+        $r0 := @this: com.wisorg.jslibrary.DetailActivity;
+
+        $r1 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: java.lang.String mUrl&gt;;
+
+        if $r1 == null goto label1;
+
+        $r1 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: java.lang.String mUrl&gt;;
+
+        $z0 = virtualinvoke $r1.&lt;java.lang.String: boolean startsWith(java.lang.String)&gt;("http");
+
+        if $z0 == 0 goto label1;
+
+        $r2 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.widget.LinearLayout mProgressBar&gt;;
+
+        virtualinvoke $r2.&lt;android.widget.LinearLayout: void setVisibility(int)&gt;(0);
+
+     label1:
+        $r3 = virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.content.Intent getIntent()&gt;();
+
+        $r1 = virtualinvoke $r3.&lt;android.content.Intent: java.lang.String getStringExtra(java.lang.String)&gt;("callbackparms");
+
+        $r0.&lt;com.wisorg.jslibrary.DetailActivity: java.lang.String callbackparms&gt; = $r1;
+
+     label2:
+        $r4 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        $r5 = virtualinvoke $r4.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setJavaScriptEnabled(boolean)&gt;(1);
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setUseWideViewPort(boolean)&gt;(1);
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setLoadWithOverviewMode(boolean)&gt;(1);
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setAllowFileAccess(boolean)&gt;(1);
+
+        $r6 = virtualinvoke $r5.&lt;java.lang.Object: java.lang.Class getClass()&gt;();
+
+        $z0 = virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: boolean getMethodIsExit(java.lang.Class,java.lang.String)&gt;($r6, "setAllowFileAccessFromFileURLs");
+
+        if $z0 == 0 goto label3;
+
+        $r6 = virtualinvoke $r5.&lt;java.lang.Object: java.lang.Class getClass()&gt;();
+
+        $z0 = virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: boolean getMethodIsExit(java.lang.Class,java.lang.String)&gt;($r6, "setAllowUniversalAccessFromFileURLs");
+
+        if $z0 == 0 goto label3;
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setAllowFileAccessFromFileURLs(boolean)&gt;(1);
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setAllowUniversalAccessFromFileURLs(boolean)&gt;(1);
+
+     label3:
+        $r4 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: void addJavascriptInterface(java.lang.Object,java.lang.String)&gt;($r0, "android");
+
+        $r4 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: void setVisibility(int)&gt;(0);
+
+        $r4 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: boolean requestFocus()&gt;();
+
+        virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: void showAlert()&gt;();
+
+        $r4 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        $r1 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: java.lang.String mUrl&gt;;
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: void loadUrl(java.lang.String)&gt;($r1);
+
+        return;
+
+     label4:
+        $r7 := @caughtexception;
+
+        goto label2;
+&#13;
+        catch java.lang.Exception from label1 to label2 with label4;&#13;
+    }&#13;
+</MisuseMethodBody></MisuseAPI><MisuseAPI Name="$r3 = virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)&gt;(&quot;js&quot;, 0)"><InvokeFrom>&lt;com.wisorg.jslibrary.DetailActivity: void setKeyValue(java.lang.String,java.lang.String)&gt;</InvokeFrom><MisuseMethodBody>    public void setKeyValue(java.lang.String, java.lang.String)&#13;
+    {&#13;
+        com.wisorg.jslibrary.DetailActivity $r0;
+        java.lang.String $r1, $r2;
+        android.content.SharedPreferences $r3;
+        android.content.SharedPreferences$Editor $r4;
+
+        $r0 := @this: com.wisorg.jslibrary.DetailActivity;
+
+        $r1 := @parameter0: java.lang.String;
+
+        $r2 := @parameter1: java.lang.String;
+
+        $r3 = virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)&gt;("js", 0);
+
+        $r4 = interfaceinvoke $r3.&lt;android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()&gt;();
+
+        interfaceinvoke $r4.&lt;android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)&gt;($r1, $r2);
+
+        interfaceinvoke $r4.&lt;android.content.SharedPreferences$Editor: boolean commit()&gt;();
+
+        return;
+    }&#13;
+</MisuseMethodBody></MisuseAPI><MisuseAPI Name="$r1 = virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)&gt;(&quot;js&quot;, 0)"><InvokeFrom>&lt;com.wisorg.jslibrary.DetailActivity: void onResume()&gt;</InvokeFrom><MisuseMethodBody>    public void onResume()&#13;
+    {&#13;
+        com.wisorg.jslibrary.DetailActivity $r0;
+        android.content.SharedPreferences $r1;
+        java.lang.String $r2;
+        boolean $z0;
+        android.webkit.WebView $r3;
+        android.content.SharedPreferences$Editor $r4;
+
+        $r0 := @this: com.wisorg.jslibrary.DetailActivity;
+
+        specialinvoke $r0.&lt;android.app.Activity: void onResume()&gt;();
+
+        $r1 = virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)&gt;("js", 0);
+
+        $r2 = interfaceinvoke $r1.&lt;android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)&gt;("pageChangeFlag", "");
+
+        $z0 = virtualinvoke $r2.&lt;java.lang.String: boolean equals(java.lang.Object)&gt;("1");
+
+        if $z0 == 0 goto label1;
+
+        $r3 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        virtualinvoke $r3.&lt;android.webkit.WebView: void loadUrl(java.lang.String)&gt;("javascript:refreshPage()");
+
+        $r1 = virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)&gt;("js", 0);
+
+        $r4 = interfaceinvoke $r1.&lt;android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()&gt;();
+
+        interfaceinvoke $r4.&lt;android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putString(java.lang.String,java.lang.String)&gt;("pageChangeFlag", "0");
+
+        interfaceinvoke $r4.&lt;android.content.SharedPreferences$Editor: boolean commit()&gt;();
+
+        return;
+
+     label1:
+        return;
+    }&#13;
+</MisuseMethodBody></MisuseAPI><MisuseAPI Name="virtualinvoke $r4.&lt;android.webkit.WebView: void addJavascriptInterface(java.lang.Object,java.lang.String)&gt;($r0, &quot;android&quot;)"><InvokeFrom>&lt;com.wisorg.jslibrary.DetailActivity: void setWebView()&gt;</InvokeFrom><MisuseMethodBody>    private void setWebView()&#13;
+    {&#13;
+        com.wisorg.jslibrary.DetailActivity $r0;
+        java.lang.String $r1;
+        boolean $z0;
+        android.widget.LinearLayout $r2;
+        android.content.Intent $r3;
+        android.webkit.WebView $r4;
+        android.webkit.WebSettings $r5;
+        java.lang.Class $r6;
+        java.lang.Exception $r7;
+
+        $r0 := @this: com.wisorg.jslibrary.DetailActivity;
+
+        $r1 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: java.lang.String mUrl&gt;;
+
+        if $r1 == null goto label1;
+
+        $r1 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: java.lang.String mUrl&gt;;
+
+        $z0 = virtualinvoke $r1.&lt;java.lang.String: boolean startsWith(java.lang.String)&gt;("http");
+
+        if $z0 == 0 goto label1;
+
+        $r2 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.widget.LinearLayout mProgressBar&gt;;
+
+        virtualinvoke $r2.&lt;android.widget.LinearLayout: void setVisibility(int)&gt;(0);
+
+     label1:
+        $r3 = virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.content.Intent getIntent()&gt;();
+
+        $r1 = virtualinvoke $r3.&lt;android.content.Intent: java.lang.String getStringExtra(java.lang.String)&gt;("callbackparms");
+
+        $r0.&lt;com.wisorg.jslibrary.DetailActivity: java.lang.String callbackparms&gt; = $r1;
+
+     label2:
+        $r4 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        $r5 = virtualinvoke $r4.&lt;android.webkit.WebView: android.webkit.WebSettings getSettings()&gt;();
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setJavaScriptEnabled(boolean)&gt;(1);
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setUseWideViewPort(boolean)&gt;(1);
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setLoadWithOverviewMode(boolean)&gt;(1);
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setAllowFileAccess(boolean)&gt;(1);
+
+        $r6 = virtualinvoke $r5.&lt;java.lang.Object: java.lang.Class getClass()&gt;();
+
+        $z0 = virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: boolean getMethodIsExit(java.lang.Class,java.lang.String)&gt;($r6, "setAllowFileAccessFromFileURLs");
+
+        if $z0 == 0 goto label3;
+
+        $r6 = virtualinvoke $r5.&lt;java.lang.Object: java.lang.Class getClass()&gt;();
+
+        $z0 = virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: boolean getMethodIsExit(java.lang.Class,java.lang.String)&gt;($r6, "setAllowUniversalAccessFromFileURLs");
+
+        if $z0 == 0 goto label3;
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setAllowFileAccessFromFileURLs(boolean)&gt;(1);
+
+        virtualinvoke $r5.&lt;android.webkit.WebSettings: void setAllowUniversalAccessFromFileURLs(boolean)&gt;(1);
+
+     label3:
+        $r4 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: void addJavascriptInterface(java.lang.Object,java.lang.String)&gt;($r0, "android");
+
+        $r4 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: void setVisibility(int)&gt;(0);
+
+        $r4 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: boolean requestFocus()&gt;();
+
+        virtualinvoke $r0.&lt;com.wisorg.jslibrary.DetailActivity: void showAlert()&gt;();
+
+        $r4 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: android.webkit.WebView mWebView&gt;;
+
+        $r1 = $r0.&lt;com.wisorg.jslibrary.DetailActivity: java.lang.String mUrl&gt;;
+
+        virtualinvoke $r4.&lt;android.webkit.WebView: void loadUrl(java.lang.String)&gt;($r1);
+
+        return;
+
+     label4:
+        $r7 := @caughtexception;
+
+        goto label2;
+&#13;
+        catch java.lang.Exception from label1 to label2 with label4;&#13;
+    }&#13;
+</MisuseMethodBody></MisuseAPI></APIMisuseResult>

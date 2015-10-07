@@ -1,0 +1,2 @@
+<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>
+<android.app.DownloadManager$Request: void <init>(com.wisorg.fzdx.activity.common.WebViewActivity,android.content.Context)

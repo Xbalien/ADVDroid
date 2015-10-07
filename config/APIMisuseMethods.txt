@@ -1,0 +1,20 @@
+% WebView RCE target_sdk < 17
+<android.webkit.WebView: void addJavascriptInterface(java.lang.Object,java.lang.String)>
+<android.webkit.WebView: void removeJavascriptInterface(java.lang.String)>
+
+% WebView file:// leak target_sdk < 17
+<android.webkit.WebSettings: void setAllowFileAccess(boolean)>
+<android.webkit.WebSettings: void setAllowFileAccessFromFileURLs(boolean)>
+<android.webkit.WebSettings: void setAllowUniversalAccessFromFileURLs(boolean)>
+
+% WebView SavaPassword
+<android.webkit.WebSettings: void setSavePassword(boolean)>
+
+% Https
+<org.apache.http.conn.ssl.SSLSocketFactory: void setHostnameVerifier(org.apache.http.conn.ssl.X509HostnameVerifier)>
+
+% File operation //MODE_PRIVATE MODE_WORLD_READABLE MODE_WORLD_WRITEABLE
+<android.content.ContextWrapper: java.io.FileOutputStream openFileOutput(java.lang.String,int)>
+%<android.content.ContextWrapper: android.database.sqlite.SQLiteDatabase openOrCreateDatabase(java.lang.String,int,android.database.sqlite.SQLiteDatabase.CursorFactory)>
+<android.content.ContextWrapper: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)>
+<android.content.ContextWrapper: android.database.sqlite.SQLiteDatabase openOrCreateDatabase(java.lang.String,int,android.database.sqlite.SQLiteDatabase$CursorFactory)>

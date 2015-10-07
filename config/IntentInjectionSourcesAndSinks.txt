@@ -1,0 +1,7 @@
+Ljava/net/URLConnection;.setRequestProperty:(Ljava/lang/String;Ljava/lang/String;)V -> _SINK_
+Landroid/telephony/SmsManager;.sendTextMessage:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V android.permission.SEND_SMS -> _SINK_
+Landroid/telephony/SmsManager;.sendDataMessage:(Ljava/lang/String;Ljava/lang/String;SLbyte[];Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V android.permission.SEND_SMS -> _SINK_
+Landroid/telephony/SmsManager;.sendMultipartTextMessage:(Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V android.permission.SEND_SMS -> _SINK_
+Ljava/net/Socket;.connect:(Ljava/net/SocketAddress;)V -> _SINK_
+Landroid/os/Handler;.sendMessage:(Landroid/os/Message;)Z -> _SINK_
+Ljava/net/URL;.openConnection:()Ljava/net/URLConnection; -> _SINK_
