@@ -32,7 +32,7 @@ statically vetting android apps based soot
     find_content_uris(dex_string, manifest_parser.get_package_name())
     find_exposed_cp(manifest_parser)
   
-  find_content_uris get the uris in the apk, more details in [ADVDroid/python/sampleapk/com.wisorg.fzdx.content_uri](https://github.com/Xbalien/ADVDroid/blob/master/python/sampleapk/com.wisorg.fzdx.content_uri). It used to [ComponentFuzzer](https://github.com/Xbalien/ComponentFuzzer) fuzz content provider.
+  find_content_uris get the uris in the apk, more details in [ADVDroid/python/sampleapk/com.wisorg.fzdx.content_uri](https://github.com/Xbalien/ADVDroid/blob/master/python/sampleapk/com.wisorg.fzdx.content_uri). It is used to [ComponentFuzzer](https://github.com/Xbalien/ComponentFuzzer) fuzzing content provider.
 
     content://com.wisorg.fzdx/favorites?notify=false
     content://telephony/carriers/preferapn
@@ -46,8 +46,8 @@ statically vetting android apps based soot
   
   It has two parts:
   
-  (1) Construct Intent Struct (parse exposed component), more details in [ADVDroid/out/com.wisorg.fzdx.json](https://github.com/Xbalien/ADVDroid/blob/master/out/com.wisorg.fzdx.json)
-  
+  (1) Construct intent struct (parse exposed component), more details in [ADVDroid/out/com.wisorg.fzdx.json](https://github.com/Xbalien/ADVDroid/blob/master/out/com.wisorg.fzdx.json)
+  It is used to [ComponentFuzzer](https://github.com/Xbalien/ComponentFuzzer) fuzzing intent.
     
     {
     "com.wisorg.identity.view.LoginActivity":{"getStringExtra":["com.wisorg.sso.PACKAGE_NAME","com.wisorg.sso.APP_NAME"],"getIntExtra":["com.wisorg.sso.SDK_VERSION"]},
@@ -60,7 +60,7 @@ statically vetting android apps based soot
   
   (2) API Reachability Analysis
   
-  It can be used to vetting API misuse and API sink is reachable, more details in [ADVDroid/out/com.wisorg.fzdx_result.xml](https://github.com/Xbalien/ADVDroid/blob/master/out/com.wisorg.fzdx_result.xml).
+  It can be used to vetting API misuse and API sink is reachable, more details in [ADVDroid/out/com.wisorg.fzdx_result.xml](https://github.com/Xbalien/ADVDroid/blob/master/out/com.wisorg.fzdx_result.xml).  
 
 
 
