@@ -15,6 +15,7 @@ import javax.xml.transform.stream.StreamResult;
 import net.sf.json.JSONObject;
 
 import org.rois.asvdroid.reachability.APIMisuseAnalysis;
+import org.rois.asvdroid.reachability.APISinkAnalysis;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Text;
@@ -78,15 +79,17 @@ public class VettingResultShowUtils {
 		Document doc = null;
 		doc = builder.newDocument();
 
-		Element root = doc.createElement("APIMisuseResult");
+		Element root = doc.createElement("StaticAnalysis_API");
 		doc.appendChild(root);
 		
+		Element misuseAnalysis = doc.createElement("MisuseAnalysis");
+		root.appendChild(misuseAnalysis);
 		
 		for (String key : APIMisuseAnalysis.getAPIMisuseVettingResult().keySet()) {
 			
-			Element misuseAPI = doc.createElement("MisuseAPI");
+			Element misuseAPI = doc.createElement("API");
 			misuseAPI.setAttribute("Name", key);
-			root.appendChild(misuseAPI);
+			misuseAnalysis.appendChild(misuseAPI);
 			
 			Element invokeFrom = doc.createElement("InvokeFrom");
 			misuseAPI.appendChild(invokeFrom);
@@ -94,11 +97,29 @@ public class VettingResultShowUtils {
 			Text invoke = doc.createTextNode(APIMisuseAnalysis.getAPIMisuseVettingResult().get(key));
 			invokeFrom.appendChild(invoke);
 			
-			Element misuseMethodBody = doc.createElement("MisuseMethodBody");
+			/*Element misuseMethodBody = doc.createElement("MisuseMethodBody");
 			misuseAPI.appendChild(misuseMethodBody);
 			
 			Text body = doc.createTextNode(APIMisuseAnalysis.getAPIMisuseVettingResultDetail().get(key));
-			misuseMethodBody.appendChild(body);
+			misuseMethodBody.appendChild(body);*/
+			
+			
+		}
+		
+		Element capacityLeak = doc.createElement("CapacityLeak");
+		root.appendChild(capacityLeak);
+		
+		for (String key : APISinkAnalysis.getAPIReachablityPath().keySet()) {
+			
+			Element sinkAPI = doc.createElement("SinkAPI");
+			sinkAPI.setAttribute("Name", key);
+			capacityLeak.appendChild(sinkAPI);
+			
+			Element invokeFrom = doc.createElement("InvokeFrom");
+			sinkAPI.appendChild(invokeFrom);
+			
+			Text invoke = doc.createTextNode(APISinkAnalysis.getAPIReachablityPath().get(key));
+			invokeFrom.appendChild(invoke);
 		}
 		
 		doc2XmlFile(doc, fileName + ".xml");

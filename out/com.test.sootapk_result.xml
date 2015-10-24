@@ -1,87 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><APIMisuseResult><MisuseAPI Name="virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: java.io.FileOutputStream openFileOutput(java.lang.String,int)&gt;(&quot;text1&quot;, 0)"><InvokeFrom>&lt;com.test.sootapk.VulActivity: void onResume()&gt;</InvokeFrom><MisuseMethodBody>    protected void onResume()&#13;
-    {&#13;
-        com.test.sootapk.VulActivity $r0;
-        java.io.FileNotFoundException $r1;
-        android.content.Intent $r2, $r3;
-        java.lang.String $r4, $r5;
-        boolean $z0;
-        int $i0;
-        java.util.ArrayList $r6;
-        android.os.Parcelable $r7;
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<APIMisuseResult>
+    <MisuseAPI Name="virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: java.io.FileOutputStream openFileOutput(java.lang.String,int)&gt;(&quot;text1&quot;, 0)"><InvokeFrom>&lt;com.test.sootapk.VulActivity: void onResume()&gt;</InvokeFrom><MisuseMethodBody>    protected void onResume()&#13;
 
-        $r0 := @this: com.test.sootapk.VulActivity;
-
-        specialinvoke $r0.&lt;android.app.Activity: void onResume()&gt;();
-
-        $r3 = virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: android.content.Intent getIntent()&gt;();
-
-        $r2 = virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: android.content.Intent getIntent()&gt;();
-
-        $r4 = virtualinvoke $r2.&lt;android.content.Intent: java.lang.String getAction()&gt;();
-
-        $r5 = "action";
-
-        $z0 = virtualinvoke $r5.&lt;java.lang.String: boolean equals(java.lang.Object)&gt;($r4);
-
-        if $z0 == 0 goto label1;
-
-        $i0 = virtualinvoke $r3.&lt;android.content.Intent: int getIntExtra(java.lang.String,int)&gt;("int", 0);
-
-        if $i0 != 1 goto label1;
-
-        $r5 = virtualinvoke $r3.&lt;android.content.Intent: java.lang.String getStringExtra(java.lang.String)&gt;("string");
-
-        virtualinvoke $r5.&lt;java.lang.String: boolean equals(java.lang.Object)&gt;("string");
-
-     label1:
-        $r6 = virtualinvoke $r3.&lt;android.content.Intent: java.util.ArrayList getStringArrayListExtra(java.lang.String)&gt;("list");
-
-        if $r6 == null goto label2;
-
-        virtualinvoke $r6.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;(0);
-
-        virtualinvoke $r6.&lt;java.util.ArrayList: java.lang.Object get(int)&gt;(1);
-
-     label2:
-        $r2 = null;
-
-        $r7 = virtualinvoke $r3.&lt;android.content.Intent: android.os.Parcelable getParcelableExtra(java.lang.String)&gt;("next_intent");
-
-        $z0 = $r7 instanceof android.content.Intent;
-
-        if $z0 == 0 goto label3;
-
-        $r2 = (android.content.Intent) $r7;
-
-     label3:
-        if $r2 == null goto label4;
-
-        virtualinvoke $r2.&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,boolean)&gt;("put_next_intent", 1);
-
-        virtualinvoke $r2.&lt;android.content.Intent: android.content.Intent putExtra(java.lang.String,java.lang.String)&gt;("put_next_intent_string", "put_string");
-
-        virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: void startActivity(android.content.Intent)&gt;($r2);
-
-     label4:
-        virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: java.io.FileOutputStream openFileOutput(java.lang.String,int)&gt;("text1", 0);
-
-        virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)&gt;("share1", 0);
-
-        virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: android.database.sqlite.SQLiteDatabase openOrCreateDatabase(java.lang.String,int,android.database.sqlite.SQLiteDatabase$CursorFactory)&gt;("database", 1, null);
-
-     label5:
-        return;
-
-     label6:
-        $r1 := @caughtexception;
-
-        virtualinvoke $r1.&lt;java.io.FileNotFoundException: void printStackTrace()&gt;();
-
-        return;
-&#13;
-        catch java.io.FileNotFoundException from label4 to label5 with label6;&#13;
-    }&#13;
-</MisuseMethodBody></MisuseAPI><MisuseAPI Name="virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)&gt;(&quot;share1&quot;, 0)"><InvokeFrom>&lt;com.test.sootapk.VulActivity: void onResume()&gt;</InvokeFrom><MisuseMethodBody>    protected void onResume()&#13;
+	</MisuseAPI>
+	
+	<MisuseAPI Name="virtualinvoke $r0.&lt;com.test.sootapk.VulActivity: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)&gt;(&quot;share1&quot;, 0)">
+	    <InvokeFrom>&lt;com.test.sootapk.VulActivity: void onResume()&gt;
+	    </InvokeFrom>
+	    <MisuseMethodBody>    protected void onResume()&#13;
     {&#13;
         com.test.sootapk.VulActivity $r0;
         java.io.FileNotFoundException $r1;
