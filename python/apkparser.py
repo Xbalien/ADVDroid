@@ -341,7 +341,10 @@ class ManifestParser(APKParser):
         return self.androidversion["Name"]
 
     def get_share_user_id(self):
-        return self.share_user_id
+        if self.share_user_id:
+            return self.share_user_id
+        else:
+            return "None"
 
     def get_min_sdk(self):
         return self.min_sdk
@@ -666,6 +669,27 @@ def find_exposed_cp(manifest_parser):
             for exported_cp in exported_cps[key]:
                 file_object.write(exported_cp + '\n')
 
+def show_manifest_detail(manifest_parser):
+    print "APK information ------"
+    print "APK name is: " , manifest_parser.get_name()
+    print "APK packageName is: " , manifest_parser.get_package_name()
+    print "APK androidversion name: " , manifest_parser.get_androidversion_name()
+    print "APK androidversion code: " , manifest_parser.get_androidversion_code()
+    print "APK size is: " , manifest_parser.get_size()
+    print "APK md5 is: " ,  manifest_parser.get_md5()
+    print "APK sha1 is: " , manifest_parser.get_sha1()
+    print "APK min sdk is: " , manifest_parser.get_min_sdk()
+    print "APK target sdk is: " , manifest_parser.get_target_sdk()
+    print "\n"
+    print "APK attacksurface ------"
+    print "APK share user id: " , manifest_parser.get_share_user_id()
+    print "APK allow backup: " , manifest_parser.get_allow_backup()
+    print "APK debuggable: " , manifest_parser.get_debuggable()
+    print "APK exposed components:\n" , manifest_parser.get_exported()
+    print "\n"
+    print "APK permissions ------"
+    print manifest_parser.get_permissions()
+    #print "APK details permissions:\n" , manifest_parser.get_details_permissions()
 
 
 if __name__ == '__main__':
@@ -680,7 +704,9 @@ if __name__ == '__main__':
 
     print 'start apk parser analysis ...'
     apk_path = options.apk_path
-
+    #dex_string = DexStringParser(apk_path, DIR + URI_FILE)
+    #dex_string.parse_all_providers_uris()
+    #find_content_uris(dex_string, "QQ_contact")
     dex_string, manifest_parser = start_apk_parse(apk_path)
 
     #fd = open(DIR + 'audit_res_' + apk.package, 'wb')
@@ -714,5 +740,7 @@ if __name__ == '__main__':
     find_exposed_cp(manifest_parser)
     a = dex_string.get_all_providers_uris()
     print a
+
+    show_manifest_detail(manifest_parser)
 
     

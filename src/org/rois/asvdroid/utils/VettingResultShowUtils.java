@@ -26,7 +26,7 @@ public class VettingResultShowUtils {
 		
 		for (String key : APIMisuseAnalysis.getAPIMisuseVettingResult().keySet()) {
 			System.out.println(APIMisuseAnalysis.getAPIMisuseVettingResult().get(key) + " ----> " + key);
-			System.out.println(APIMisuseAnalysis.getAPIMisuseVettingResultDetail().get(key));
+			//System.out.println(APIMisuseAnalysis.getAPIMisuseVettingResultDetail().get(key));
 		}
 	}
 	

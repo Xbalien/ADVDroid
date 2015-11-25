@@ -13,6 +13,6 @@
 	<classpathentry kind="lib" path="lib/json_jar_lib/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="lib" path="lib/json_jar_lib/json-lib-2.4-jdk15.jar"/>
 	<classpathentry kind="lib" path="lib/json_jar_lib/ezmorph-1.0.6.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/soot-infoflow-android"/>
+	<classpathentry kind="lib" path="lib/soot-infoflow-android.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

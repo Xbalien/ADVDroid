@@ -14,7 +14,7 @@ import soot.jimple.infoflow.entryPointCreators.AndroidEntryPointConstants;
 
 public class ExposedComponentsUtil {
 	
-	private static final String DIR = "python/sampleapk/";
+	private static String DIR = "python/sampleapk/";
 	private static final String EXPOSED_CP = ".exposed_cp";
 	private static Set<String> exposedComponents = new HashSet<String>();
 	
@@ -29,7 +29,8 @@ public class ExposedComponentsUtil {
 	}
 	
 	
-	public static boolean paresExposedComponents(SetupApplication app, String packageName) throws IOException {
+	public static boolean paresExposedComponents(SetupApplication app, String packageName, String dir) throws IOException {
+		DIR = dir;
 		if (paresExposedComponents(packageName)) return true;
 		else paresExposedComponents(app);
 		return true;
