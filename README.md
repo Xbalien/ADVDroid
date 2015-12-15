@@ -60,7 +60,7 @@ statically vetting android apps based soot
   
   (2) API Reachability Analysis
   
-  It can be used to vetting API misuse and API sink is reachable, more details in [ADVDroid/out/com.wisorg.fzdx_result.xml](https://github.com/Xbalien/ADVDroid/blob/master/out/com.wisorg.fzdx_result.xml).  
+  It can be used to vetting API misuse and API sink is reachable, the list of APIs can define by yourself,more details in [ADVDroid/out/com.wisorg.fzdx_result.xml](https://github.com/Xbalien/ADVDroid/blob/master/out/com.wisorg.fzdx_result.xml).  
 
 
 
