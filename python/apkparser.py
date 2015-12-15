@@ -20,6 +20,7 @@ sys.setdefaultencoding('gb18030')
 URI_FILE = r'.content_uri'
 EXPORTED_FILE = r'.exposed_cp'
 DIR = r"sampleapk/"
+RES = r".am_result"
 DEX_STRING_TABLE_OFFSET  = 0x38
 
 class APKParser(object):
@@ -227,6 +228,8 @@ class ManifestParser(APKParser):
                     permission = application
                 else:
                     permission = 'none'
+            #if permission != 'none':
+            #    exported = 'false'
 
             iflist = item.getElementsByTagName('intent-filter')
             if iflist:
@@ -257,6 +260,13 @@ class ManifestParser(APKParser):
                 attributes['grantUriPermissions'] = item.getAttribute('android:grantUriPermissions')
                 attributes['readPermission'] = item.getAttribute('android:readPermission')
                 attributes['writePermission'] = item.getAttribute('android:writePermission')
+                if item.getAttribute('android:exported') == None:
+                    if attributes['grantUriPermissions'] != None | attributes['readPermission'] != None | attributes['writePermission'] != None:
+                        attributes['exported'] = 'false'
+                    else :
+                        attributes['exported'] = 'true'
+                else :
+                    attributes['exported'] = item.getAttribute('android:exported')
                 self.__providers[name] = attributes
                 
             elif component == 'receiver':
@@ -269,7 +279,7 @@ class ManifestParser(APKParser):
         self.allow_backup = self.__get_element('application', 'android:allowBackup')
         self.debuggable = self.__get_element('application', 'android:debuggable')
         self.min_sdk = self.__get_element('uses-sdk', 'android:minSdkVersion')
-        self.target_sdk = self.__get_element('uses-sdk', 'targetSdkVersion')
+        self.target_sdk = self.__get_element('uses-sdk', 'android:targetSdkVersion')
 
         for component in self.__activitys:
             if self.__activitys[component]['exported'] == 'true':
@@ -474,7 +484,7 @@ class ManifestParser(APKParser):
             Return this APK declaration receivers name
             :rtype a list
         '''
-        return self.__providers.keys()
+        return self.__receivers.keys()
     
     def get_receivers_info(self):
         '''
@@ -505,6 +515,18 @@ class ManifestParser(APKParser):
             :rtype a dictionnary
         '''
         return self.__exported
+
+    def get_activity_count(self):
+        return len(self.get_activitys())
+
+    def get_service_count(self):
+        return len(self.get_services())
+
+    def get_provider_count(self):
+        return len(self.get_providers())
+
+    def get_receiver_count(self):
+        return len(self.get_receivers())
 
     def get_exported_activity_count(self):
         return len(self.__exported['activity'])
@@ -691,12 +713,71 @@ def show_manifest_detail(manifest_parser):
     print manifest_parser.get_permissions()
     #print "APK details permissions:\n" , manifest_parser.get_details_permissions()
 
+def dump_manifest_detail(manifest_parser):
+    package_name = manifest_parser.get_package_name()
+    res = "\nAPK information ------"
+    res += "\nAPK name is: " + str(manifest_parser.get_name())
+    res += "\nAPK packageName is: " + str(manifest_parser.get_package_name())
+    res += "\nAPK androidversion name: " + str(manifest_parser.get_androidversion_name())
+    res += "\nAPK androidversion code: " + str(manifest_parser.get_androidversion_code())
+    res += "\nAPK size is: " + str(manifest_parser.get_size())
+    res += "\nAPK md5 is: " + str(manifest_parser.get_md5())
+    res += "\nAPK sha1 is: " + str(manifest_parser.get_sha1())
+    res += "\nAPK min sdk is: " + str(manifest_parser.get_min_sdk())
+    res += "\nAPK target sdk is: " + str(manifest_parser.get_target_sdk())
+    res += "\n"
+    res += "\nAPK attacksurface ------"
+    res += "\nAPK share user id: " + str(manifest_parser.get_share_user_id())
+    res += "\nAPK allow backup: " + str(manifest_parser.get_allow_backup())
+    res += "\nAPK debuggable: " + str(manifest_parser.get_debuggable())
+    res += "\nAPK exposed components:\n" + str(manifest_parser.get_exported())
+    res += "\nAPK exposed activity count: " + str(manifest_parser.get_exported_activity_count())
+    res += "\nAPK exposed service count: " + str(manifest_parser.get_exported_service_count())
+    res += "\nAPK exposed provider count: " + str(manifest_parser.get_exported_provider_count())
+    res += "\nAPK exposed receiver count: " + str(manifest_parser.get_exported_receiver_count())
+    res += "\nAPK activity count: " + str(manifest_parser.get_activity_count())
+    res += "\nAPK service count: " + str(manifest_parser.get_service_count())
+    res += "\nAPK provider count: " + str(manifest_parser.get_provider_count())
+    res += "\nAPK receiver count: " + str(manifest_parser.get_receiver_count())
+    res += "\n"
+    res += "\nAPK permissions ------"
+    res += "\n" + str(manifest_parser.get_permissions())
+    res += "\n" + str(manifest_parser.get_details_permissions())
+    with open(DIR + package_name + RES,'wb+') as file_object:
+        file_object.write(res)
+
+    def get_activity_count(self):
+        return len(self.get_activitys())
+
+    def get_service_count(self):
+        return len(self.get_services())
+
+    def get_provider_count(self):
+        return len(self.get_providers())
+
+    def get_receiver_count(self):
+        return len(self.get_receivers())
+
+	
+def start(apk_path, out):
+    if out:
+        global DIR
+        DIR = out
+    dex_string, manifest_parser = start_apk_parse(apk_path)
+    print "package name:", manifest_parser.get_package_name()
+    find_content_uris(dex_string, manifest_parser.get_package_name())
+    find_exposed_cp(manifest_parser)
+    a = dex_string.get_all_providers_uris()
+    #show_manifest_detail(manifest_parser)
+    dump_manifest_detail(manifest_parser)
+
 
 if __name__ == '__main__':
 
-    usage = 'usage: %prog -f apk_path'
+    usage = 'usage: %prog -f apk_path -o out_dir'
     parser = OptionParser(usage = usage)
     parser.add_option('-f', '--apk_path', dest = 'apk_path', help = 'apk name to static audit')
+    parser.add_option('-o', '--out_dir', dest = 'out_dir', help = 'out_dir to dump result')
     (options, args) = parser.parse_args()
 
     if options.apk_path == None:
@@ -704,43 +785,8 @@ if __name__ == '__main__':
 
     print 'start apk parser analysis ...'
     apk_path = options.apk_path
-    #dex_string = DexStringParser(apk_path, DIR + URI_FILE)
-    #dex_string.parse_all_providers_uris()
-    #find_content_uris(dex_string, "QQ_contact")
-    dex_string, manifest_parser = start_apk_parse(apk_path)
-
-    #fd = open(DIR + 'audit_res_' + apk.package, 'wb')
-    #fd.close()
-
-    print manifest_parser.get_all_components()
-    print manifest_parser.get_exported_detail()
-    print manifest_parser.get_exported()
-    print manifest_parser.get_exported_activity_count()
-    print manifest_parser.get_exported_service_count()
-    print manifest_parser.get_exported_provider_count()
-    print manifest_parser.get_exported_receiver_count()
-    print manifest_parser.get_allow_backup()
-    print manifest_parser.get_debuggable()
-    print manifest_parser.get_name()
-    print manifest_parser.get_size()
-    print manifest_parser.get_md5()
-    print manifest_parser.get_sha1()
-    print manifest_parser.get_sha256()
-    print manifest_parser.get_androidversion_name()
-    print manifest_parser.get_androidversion_code()
-    print manifest_parser.get_package_name()
-    print manifest_parser.get_permissions()
-    print manifest_parser.get_min_sdk()
-    print manifest_parser.get_target_sdk()
-    print manifest_parser.get_share_user_id()
-    print manifest_parser.get_main_activity()
-    print manifest_parser.get_details_permissions()
-
-    find_content_uris(dex_string, manifest_parser.get_package_name())
-    find_exposed_cp(manifest_parser)
-    a = dex_string.get_all_providers_uris()
-    print a
-
-    show_manifest_detail(manifest_parser)
-
-    
+    out_dir = options.out_dir
+    print "apk path: ", apk_path
+    print 'out_dir: ', out_dir
+    start(apk_path, out_dir)
+    print "end..."

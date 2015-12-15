@@ -135,16 +135,19 @@ class FileNotPresent(Error):
 class APK(object):
     """
         This class can access to all elements in an APK file
+
         :param filename: specify the path of the file, or raw data
         :param raw: specify if the filename is a path or raw data (optional)
         :param mode: specify the mode to open the file (optional)
         :param magic_file: specify the magic file (optional)
         :param zipmodule: specify the type of zip module to use (0:chilkat, 1:zipfile, 2:patch zipfile)
+
         :type filename: string
         :type raw: boolean
         :type mode: string
         :type magic_file: string
         :type zipmodule: int
+
         :Example:
           APK("myfile.apk")
           APK(read("myfile.apk"), raw=True)
@@ -261,6 +264,7 @@ class APK(object):
     def get_AndroidManifest(self):
         """
             Return the Android Manifest XML file
+
             :rtype: xml object
         """
         return self.xml["AndroidManifest.xml"]
@@ -268,6 +272,7 @@ class APK(object):
     def is_valid_APK(self):
         """
             Return true if the APK is valid, false otherwise
+
             :rtype: boolean
         """
         return self.valid_apk
@@ -275,6 +280,7 @@ class APK(object):
     def get_filename(self):
         """
             Return the filename of the APK
+
             :rtype: string
         """
         return self.filename
@@ -282,6 +288,7 @@ class APK(object):
     def get_app_name(self):
         """
             Return the appname of the APK
+
             :rtype: string
         """
         main_activity_name = self.get_main_activity()
@@ -308,6 +315,7 @@ class APK(object):
             Return the first non-greater density than max_dpi icon file name,
             unless exact icon resolution is set in the manifest, in which case
             return the exact file
+
             :rtype: string
         """
         main_activity_name = self.get_main_activity()
@@ -349,6 +357,7 @@ class APK(object):
     def get_package(self):
         """
             Return the name of the package
+
             :rtype: string
         """
         return self.package
@@ -356,6 +365,7 @@ class APK(object):
     def get_androidversion_code(self):
         """
             Return the android version code
+
             :rtype: string
         """
         return self.androidversion["Code"]
@@ -363,6 +373,7 @@ class APK(object):
     def get_androidversion_name(self):
         """
             Return the android version name
+
             :rtype: string
         """
         return self.androidversion["Name"]
@@ -370,6 +381,7 @@ class APK(object):
     def get_files(self):
         """
             Return the files inside the APK
+
             :rtype: a list of strings
         """
         return self.zip.namelist()
@@ -377,6 +389,7 @@ class APK(object):
     def get_files_types(self):
         """
             Return the files inside the APK with their associated types (by using python-magic)
+
             :rtype: a dictionnary
         """
         try:
@@ -443,6 +456,7 @@ class APK(object):
     def get_files_information(self):
         """
             Return the files inside the APK with their associated types and crc32
+
             :rtype: string, string, int
         """
         if self.files == {}:
@@ -457,6 +471,7 @@ class APK(object):
     def get_raw(self):
         """
             Return raw bytes of the APK
+
             :rtype: string
         """
         return self.__raw
@@ -464,6 +479,7 @@ class APK(object):
     def get_file(self, filename):
         """
             Return the raw data of the specified filename
+
             :rtype: string
         """
         try:
@@ -474,6 +490,7 @@ class APK(object):
     def get_dex(self):
         """
             Return the raw data of the classes dex file
+
             :rtype: a string
         """
         try:
@@ -484,6 +501,7 @@ class APK(object):
     def get_all_dex(self):
         """
             Return the raw data of all classes dex files
+
             :rtype: a generator
         """
         try:
@@ -499,6 +517,7 @@ class APK(object):
     def get_elements(self, tag_name, attribute):
         """
             Return elements in xml files which match with the tag name and the specific attribute
+
             :param tag_name: a string which specify the tag name
             :param attribute: a string which specify the attribute
         """
@@ -526,10 +545,12 @@ class APK(object):
     def get_element(self, tag_name, attribute, **attribute_filter):
         """
             Return element in xml files which match with the tag name and the specific attribute
+
             :param tag_name: specify the tag name
             :type tag_name: string
             :param attribute: specify the attribute
             :type attribute: string
+
             :rtype: string
         """
         for i in self.xml:
@@ -553,6 +574,7 @@ class APK(object):
     def get_main_activity(self):
         """
             Return the name of the main activity
+
             :rtype: string
         """
         x = set()
@@ -578,6 +600,7 @@ class APK(object):
     def get_activities(self):
         """
             Return the android:name attribute of all activities
+
             :rtype: a list of string
         """
         return self.get_elements("activity", "name")
@@ -585,6 +608,7 @@ class APK(object):
     def get_services(self):
         """
             Return the android:name attribute of all services
+
             :rtype: a list of string
         """
         return self.get_elements("service", "name")
@@ -592,6 +616,7 @@ class APK(object):
     def get_receivers(self):
         """
             Return the android:name attribute of all receivers
+
             :rtype: a list of string
         """
         return self.get_elements("receiver", "name")
@@ -599,6 +624,7 @@ class APK(object):
     def get_providers(self):
         """
             Return the android:name attribute of all providers
+
             :rtype: a list of string
         """
         return self.get_elements("provider", "name")
@@ -637,6 +663,7 @@ class APK(object):
     def get_permissions(self):
         """
             Return permissions
+
             :rtype: list of string
         """
         return self.permissions
@@ -644,6 +671,7 @@ class APK(object):
     def get_details_permissions(self):
         """
             Return permissions with details
+
             :rtype: list of string
         """
         l = {}
@@ -666,6 +694,7 @@ class APK(object):
     def get_requested_permissions(self):
         """
             Returns all requested permissions.
+
             :rtype: list of strings
         """
         return self.permissions
@@ -673,6 +702,7 @@ class APK(object):
     def get_requested_aosp_permissions(self):
         '''
             Returns requested permissions declared within AOSP project.
+
             :rtype: list of strings
         '''
         aosp_permissions = []
@@ -685,6 +715,7 @@ class APK(object):
     def get_requested_aosp_permissions_details(self):
         """
             Returns requested aosp permissions with details.
+
             :rtype: dictionary
         """
         l = {}
@@ -699,6 +730,7 @@ class APK(object):
     def get_requested_third_party_permissions(self):
         '''
             Returns list of requested permissions not declared within AOSP project.
+
             :rtype: list of strings
         '''
         third_party_permissions = []
@@ -711,6 +743,7 @@ class APK(object):
     def get_declared_permissions(self):
         '''
             Returns list of the declared permissions.
+
             :rtype: list of strings
         '''
         return self.declared_permissions.keys()
@@ -718,6 +751,7 @@ class APK(object):
     def get_declared_permissions_details(self):
         '''
             Returns declared permissions with the details.
+
             :rtype: dict
         '''
         return self.declared_permissions
@@ -725,6 +759,7 @@ class APK(object):
     def get_max_sdk_version(self):
         """
             Return the android:maxSdkVersion attribute
+
             :rtype: string
         """
         return self.get_element("uses-sdk", "maxSdkVersion")
@@ -732,6 +767,7 @@ class APK(object):
     def get_min_sdk_version(self):
         """
             Return the android:minSdkVersion attribute
+
             :rtype: string
         """
         return self.get_element("uses-sdk", "minSdkVersion")
@@ -739,6 +775,7 @@ class APK(object):
     def get_target_sdk_version(self):
         """
             Return the android:targetSdkVersion attribute
+
             :rtype: string
         """
         return self.get_element("uses-sdk", "targetSdkVersion")
@@ -746,6 +783,7 @@ class APK(object):
     def get_libraries(self):
         """
             Return the android:name attributes for libraries
+
             :rtype: list
         """
         return self.get_elements("uses-library", "name")
@@ -766,9 +804,11 @@ class APK(object):
     def new_zip(self, filename, deleted_files=None, new_files={}):
         """
             Create a new zip file
+
             :param filename: the output filename of the zip
             :param deleted_files: a regex pattern to remove specific file
             :param new_files: a dictionnary of new files
+
             :type filename: string
             :type deleted_files: None or a string
             :type new_files: a dictionnary (key:filename, value:content of the file)
@@ -793,6 +833,7 @@ class APK(object):
     def get_android_manifest_axml(self):
         """
             Return the :class:`AXMLPrinter` object which corresponds to the AndroidManifest.xml file
+
             :rtype: :class:`AXMLPrinter`
         """
         try:
@@ -803,6 +844,7 @@ class APK(object):
     def get_android_manifest_xml(self):
         """
             Return the xml object which corresponds to the AndroidManifest.xml file
+
             :rtype: object
         """
         try:
@@ -813,6 +855,7 @@ class APK(object):
     def get_android_resources(self):
         """
             Return the :class:`ARSCParser` object which corresponds to the resources.arsc file
+
             :rtype: :class:`ARSCParser`
         """
         try:

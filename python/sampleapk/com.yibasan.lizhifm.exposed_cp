@@ -1,0 +1,7 @@
+com.yibasan.lizhifm.audioengine.PlayerStateReceiver$MediaButtonEventReceiver
+com.yibasan.lizhifm.boot.AutoStopPlayerReceiver
+com.yibasan.lizhifm.boot.StopPlayerReceiver
+com.tencent.tauth.AuthActivity
+com.yibasan.lizhifm.wxapi.WXEntryActivity
+com.yibasan.lizhifm.activities.EntryPointActivity
+com.yibasan.lizhifm.activities.settings.ShortcutAddActivity

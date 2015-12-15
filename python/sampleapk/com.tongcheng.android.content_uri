@@ -1,0 +1,12 @@
+content://sms/
+content://com.tencent.mm.sdk.comm.provider/addCardToWX
+content://downloads/my_downloads
+content://sms/inbox
+content://com.tencent.mm.sdk.comm.provider/jumpToBizProfile
+content://com.android.launcher.settings/favorites?notify=true
+content://com.android.launcher2.settings/favorites?notify=true
+content://telephony/carriers/preferapn
+content://com.tencent.mm.sdk.plugin.provider/sharedpref
+content://media/external/images/media
+content://icc/adn
+content://com.iflytek.speechcloud.providers.LocalResourceProvider
