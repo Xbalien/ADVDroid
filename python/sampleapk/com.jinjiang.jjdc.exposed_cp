@@ -1,9 +1,0 @@
-com.message.jiguang.MyReceiver
-cn.jpush.android.service.PushReceiver
-com.jinjiang.jjdc.base.AsyncLoadService
-com.jinjiang.jjdc.controller.BaseService
-com.tencent.tauth.AuthActivity
-com.jinjiang.jjdc.controller.homepage.SplashActivity
-com.jinjiang.jjdc.wxapi.WXEntryActivity
-com.jinjiang.jjdc.controller.homepage.WelcomeActivity
-cn.jpush.android.ui.PushActivity
