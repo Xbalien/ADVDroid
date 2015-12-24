@@ -1,7 +1,7 @@
 # ADVDroid
 statically vetting android apps based soot
 # run
- 1.python ADVDroid/python/apkparser.py -f apk_path
+ 1.python ADVDroid/python/apkparser.py -f apk_path -o out_dir
   
   It support some apis for getting the manifest detail, such as:
 
@@ -31,36 +31,75 @@ statically vetting android apps based soot
 
     find_content_uris(dex_string, manifest_parser.get_package_name())
     find_exposed_cp(manifest_parser)
-  
-  find_content_uris get the uris in the apk, more details in [ADVDroid/python/sampleapk/com.wisorg.fzdx.content_uri](https://github.com/Xbalien/ADVDroid/blob/master/python/sampleapk/com.wisorg.fzdx.content_uri). It is used to [ComponentFuzzer](https://github.com/Xbalien/ComponentFuzzer) fuzzing content provider.
 
-    content://com.wisorg.fzdx/favorites?notify=false
-    content://telephony/carriers/preferapn
-    content://com.android.contacts/
-    content://
-    content://com.wisorg.fzdx/favorites?notify=true
+  The final AndroidManifest.xml vetting result as follow [ADVDroid/out/com.esun.ui.am_result](https://github.com/Xbalien/ADVDroid/blob/dev/out/com.esun.ui.am_result):
+  
+	APK information ------
+	APK name is: 500_lottery_client_for_Android_1.8.9.10044.apk
+	APK packageName is: com.esun.ui
+	APK androidversion name: 1.8.9
+	APK androidversion code: 49
+	APK size is: 6807159
+	APK md5 is: e6e88458c529bc2f062c8f99970cada0
+	APK sha1 is: c94e36376f3f14be2e8c182a9b013595b232a52a
+	APK min sdk is: 7
+	APK target sdk is: 16
+
+	APK attacksurface ------
+	APK share user id: None
+	APK allow backup: false
+	APK debuggable: false
+	APK exposed components:
+	{'provider': [], 'receiver': [u'com.esun.pushService.OnBootReceiver', u'com.esun.pushService.PushReceiver'], 'service': [], 'activity': [u'com.esun.ui.wxapi.WXPayEntryActivity', u'com.tencent.tauth.AuthActivity', u'com.esun.rabbit2.ui.activity.SplashActivity', u'com.esun.rabbit2.viewer.TestAct', u'com.esun.ui.wxapi.WXEntryActivity']}
+	APK exposed activity count: 5
+	APK exposed service count: 0
+	APK exposed provider count: 0
+	APK exposed receiver count: 2
+	APK activity count: 198
+	APK service count: 5
+	APK provider count: 1
+	APK receiver count: 2
+
+	APK permissions ------
+	['android.permission.ACCESS_NETWORK_STATE', 'android.permission.CALL_PHONE', 'android.permission.INTERNET', 'android.permission.VIBRATE', 'android.permission.ACCESS_FINE_LOCATION', 'android.permission.ACCESS_COARSE_LOCATION', 'android.permission.READ_PHONE_STATE', 'android.permission.ACCESS_WIFI_STATE', 'android.permission.CHANGE_WIFI_STATE', 'android.permission.WAKE_LOCK', 'android.permission.ACCESS_WIFI_STATE', 'android.permission.RECEIVE_BOOT_COMPLETED', 'android.permission.READ_LOGS', 'android.permission.WRITE_EXTERNAL_STORAGE', 'android.permission.GET_TASKS', 'android.permission.RECEIVE_SMS', 'android.permission.SYSTEM_ALERT_WINDOW']
+
+  
+  find_content_uris get the uris in the apk, more details in [ADVDroid/out/com.esun.ui.content_uri](https://github.com/Xbalien/ADVDroid/blob/dev/out/com.esun.ui.content_uri). It is used to [ComponentFuzzer](https://github.com/Xbalien/ComponentFuzzer) fuzzing content provider.
+
+	content://com.esun.ui.messageBox/messages/
+	content://com.esun.ui.messageBox/messages//#
+	content://com.esun.ui.messageBox/messages
   
   find_exposed_cp get the exposed compontents, It is used to constructing the intent structure.  ADVDroid/src/org/rois/asvdroid/test/TestSoot.java 
+  
   
   2.ADVDroid/src/org/rois/asvdroid/test/TestSoot.java is the APK's source code vetting entry
   
   It has two parts:
   
-  (1) Construct intent struct (parse exposed component), more details in [ADVDroid/out/com.wisorg.fzdx.json](https://github.com/Xbalien/ADVDroid/blob/master/out/com.wisorg.fzdx.json)
+  (1) Construct intent struct (parse exposed component), more details in [ADVDroid/out/com.esun.ui.json](https://github.com/Xbalien/ADVDroid/blob/dev/out/com.esun.ui.json)
   It is used to [ComponentFuzzer](https://github.com/Xbalien/ComponentFuzzer) fuzzing intent.
     
-    {
-    "com.wisorg.identity.view.LoginActivity":{"getStringExtra":["com.wisorg.sso.PACKAGE_NAME","com.wisorg.sso.APP_NAME"],"getIntExtra":["com.wisorg.sso.SDK_VERSION"]},
-    "com.wisorg.fzdx.activity.SplashActivity":{"getSerializableExtra":["EXTRA_NOTICE"],"getBooleanExtra":["EXTRA_BACGROUND"]},
-    "com.wisorg.fzdx.activity.news.NewsAggregationMainActivity":{"getStringExtra":["openUrl"]},"com.wisorg.fzdx.activity.notice.NoticeSubscribeListActivity":{"getStringExtra":["openUrl"]},
-    "com.wisorg.jslibrary.HybirdInstallActivity":{"getStringExtra":["EXTRA_INSTALL_NAME"]},
-    "com.wisorg.fzdx.receiver.AlarmReceiver":{"getSerializableExtra":["EXTRA_PUSH_MESSAGE"],"getLongExtra":["extra_download_id"]},
-    "com.wisorg.fzdx.activity.ControlActvity":{"getSerializable":["EXTRA_NOTICE"]}
-    }
-  
+	{
+	"com.tencent.tauth.AuthActivity":
+		{
+		"STRINGS":["","error","shareToQQ","complete","cancel","shareToQzone"],
+		"getString":["response","result","action","serial","access_token"]
+		},
+	"com.esun.rabbit2.ui.activity.SplashActivity":
+		{
+		"getBooleanExtra":["is_push_broadcast"]
+		},
+	"com.esun.ui.wxapi.WXEntryActivity":
+		{
+		"getStringExtra":["_wxapi_sendauth_resp_token","_wxapi_sendauth_resp_url"],
+		"STRINGS":["wx_homehalllogin"]
+		}
+	}
+
   (2) API Reachability Analysis
   
-  It can be used to vetting API misuse and API sink is reachable, more details in [ADVDroid/out/com.wisorg.fzdx_result.xml](https://github.com/Xbalien/ADVDroid/blob/master/out/com.wisorg.fzdx_result.xml).  
+  It can be used to vetting API misuse and API sink is reachable, more details in [ADVDroid/out/com.esun.ui_result.xml](https://github.com/Xbalien/ADVDroid/blob/dev/out/com.esun.ui_result.xml).  
 
 
 
