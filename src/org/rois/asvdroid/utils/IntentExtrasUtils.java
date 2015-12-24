@@ -24,6 +24,9 @@ public class IntentExtrasUtils {
 		intentPutExtrasData = new HashMap<String, HashMap<String, Set<String>>>();
 	}
 	
+	public static void addStrings(String componentName, Set<String> strings){
+		
+	}
 	
 	public static void parseExtras(HashMap<String, Set<String>> extraKeys, String methodName, String extraKey) {
 		if (extraKeys.containsKey(methodName)) {

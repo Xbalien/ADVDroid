@@ -1,0 +1,30 @@
+
+APK information ------
+APK name is: 500_lottery_client_for_Android_1.8.9.10044.apk
+APK packageName is: com.esun.ui
+APK androidversion name: 1.8.9
+APK androidversion code: 49
+APK size is: 6807159
+APK md5 is: e6e88458c529bc2f062c8f99970cada0
+APK sha1 is: c94e36376f3f14be2e8c182a9b013595b232a52a
+APK min sdk is: 7
+APK target sdk is: 16
+
+APK attacksurface ------
+APK share user id: None
+APK allow backup: false
+APK debuggable: false
+APK exposed components:
+{'provider': [], 'receiver': [u'com.esun.pushService.OnBootReceiver', u'com.esun.pushService.PushReceiver'], 'service': [], 'activity': [u'com.esun.ui.wxapi.WXPayEntryActivity', u'com.tencent.tauth.AuthActivity', u'com.esun.rabbit2.ui.activity.SplashActivity', u'com.esun.rabbit2.viewer.TestAct', u'com.esun.ui.wxapi.WXEntryActivity']}
+APK exposed activity count: 5
+APK exposed service count: 0
+APK exposed provider count: 0
+APK exposed receiver count: 2
+APK activity count: 198
+APK service count: 5
+APK provider count: 1
+APK receiver count: 2
+
+APK permissions ------
+['android.permission.ACCESS_NETWORK_STATE', 'android.permission.CALL_PHONE', 'android.permission.INTERNET', 'android.permission.VIBRATE', 'android.permission.ACCESS_FINE_LOCATION', 'android.permission.ACCESS_COARSE_LOCATION', 'android.permission.READ_PHONE_STATE', 'android.permission.ACCESS_WIFI_STATE', 'android.permission.CHANGE_WIFI_STATE', 'android.permission.WAKE_LOCK', 'android.permission.ACCESS_WIFI_STATE', 'android.permission.RECEIVE_BOOT_COMPLETED', 'android.permission.READ_LOGS', 'android.permission.WRITE_EXTERNAL_STORAGE', 'android.permission.GET_TASKS', 'android.permission.RECEIVE_SMS', 'android.permission.SYSTEM_ALERT_WINDOW']
+{'android.permission.ACCESS_FINE_LOCATION': ['dangerous', 'fine (GPS) location', 'Access fine location sources, such as the Global Positioning System on the phone, where available. Malicious applications can use this to determine where you are and may consume additional battery power.'], 'android.permission.VIBRATE': ['normal', 'control vibrator', 'Allows the application to control the vibrator.'], 'android.permission.RECEIVE_BOOT_COMPLETED': ['normal', 'automatically start at boot', 'Allows an application to start itself as soon as the system has finished booting. This can make it take longer to start the phone and allow the application to slow down the overall phone by always running.'], 'android.permission.READ_PHONE_STATE': ['dangerous', 'read phone state and identity', 'Allows the application to access the phone features of the device. An application with this permission can determine the phone number and serial number of this phone, whether a call is active, the number that call is connected to and so on.'], 'android.permission.SYSTEM_ALERT_WINDOW': ['dangerous', 'display system-level alerts', 'Allows an application to show system-alert windows. Malicious applications can take over the entire screen of the phone.'], 'android.permission.READ_LOGS': ['dangerous', 'read sensitive log data', "Allows an application to read from the system's various log files. This allows it to discover general information about what you are doing with the phone, potentially including personal or private information."], 'android.permission.ACCESS_NETWORK_STATE': ['normal', 'view network status', 'Allows an application to view the status of all networks.'], 'android.permission.ACCESS_COARSE_LOCATION': ['dangerous', 'coarse (network-based) location', 'Access coarse location sources, such as the mobile network database, to determine an approximate phone location, where available. Malicious applications can use this to determine approximately where you are.'], 'android.permission.WAKE_LOCK': ['dangerous', 'prevent phone from sleeping', 'Allows an application to prevent the phone from going to sleep.'], 'android.permission.GET_TASKS': ['dangerous', 'retrieve running applications', 'Allows application to retrieve information about currently and recently running tasks. May allow malicious applications to discover private information about other applications.'], 'android.permission.CALL_PHONE': ['dangerous', 'directly call phone numbers', 'Allows the application to call phone numbers without your intervention. Malicious applications may cause unexpected calls on your phone bill. Note that this does not allow the application to call emergency numbers.'], 'android.permission.CHANGE_WIFI_STATE': ['dangerous', 'change Wi-Fi status', 'Allows an application to connect to and disconnect from Wi-Fi access points and to make changes to configured Wi-Fi networks.'], 'android.permission.ACCESS_WIFI_STATE': ['normal', 'view Wi-Fi status', 'Allows an application to view the information about the status of Wi-Fi.'], 'android.permission.INTERNET': ['dangerous', 'full Internet access', 'Allows an application to create network sockets.'], 'android.permission.WRITE_EXTERNAL_STORAGE': ['dangerous', 'modify/delete SD card contents', 'Allows an application to write to the SD card.'], 'android.permission.RECEIVE_SMS': ['dangerous', 'receive SMS', 'Allows application to receive and process SMS messages. Malicious applications may monitor your messages or delete them without showing them to you.']}

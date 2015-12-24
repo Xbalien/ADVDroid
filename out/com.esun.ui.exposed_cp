@@ -1,0 +1,7 @@
+com.esun.pushService.OnBootReceiver
+com.esun.pushService.PushReceiver
+com.esun.ui.wxapi.WXPayEntryActivity
+com.tencent.tauth.AuthActivity
+com.esun.rabbit2.ui.activity.SplashActivity
+com.esun.rabbit2.viewer.TestAct
+com.esun.ui.wxapi.WXEntryActivity

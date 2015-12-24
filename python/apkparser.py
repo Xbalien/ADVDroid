@@ -540,6 +540,18 @@ class ManifestParser(APKParser):
     def get_exported_receiver_count(self):
         return len(self.__exported['receiver'])
 
+    def get_exported_activity(self):
+        return self.__exported['activity']
+
+    def get_exported_service(self):
+        return self.__exported['service']
+
+    def get_exported_provider(self):
+        return self.__exported['provider']
+
+    def get_exported_receiver(self):
+        return self.__exported['receiver']
+
     def get_exported_detail(self):
         return self.__exported_detail
 
@@ -676,11 +688,15 @@ def start_apk_parse(apk_path):
     return dex_string, manifest_parser
 
 def find_content_uris(dex_string, package_name):
+    uri_strings = []
     with open(DIR + package_name + URI_FILE,'wb+') as file_object:
         uris = dex_string.get_all_providers_uris()
         for uri in uris:
             uri_string = ("%s\n" % uri)
-            file_object.write(uri_string)
+            if uri_string.find(package_name) != -1:
+                uri_strings.append(uri_string.strip('\n'))
+                file_object.write(uri_string)
+    return uri_strings
 
 def find_exposed_cp(manifest_parser):
     package_name = manifest_parser.get_package_name()
@@ -765,11 +781,12 @@ def start(apk_path, out):
         DIR = out
     dex_string, manifest_parser = start_apk_parse(apk_path)
     print "package name:", manifest_parser.get_package_name()
-    find_content_uris(dex_string, manifest_parser.get_package_name())
+    uri_strings = find_content_uris(dex_string, manifest_parser.get_package_name())
     find_exposed_cp(manifest_parser)
     a = dex_string.get_all_providers_uris()
     #show_manifest_detail(manifest_parser)
     dump_manifest_detail(manifest_parser)
+    return manifest_parser, uri_strings
 
 
 if __name__ == '__main__':

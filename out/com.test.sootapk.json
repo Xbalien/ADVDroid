@@ -1,1 +1,0 @@
-{"com.test.sootapk.VulReceiver":{"getSerializableExtra":["key"]},"com.test.sootapk.VulActivity":{"getStringArrayListExtra":["list_parseIntent","list"],"getStringExtra":["string","string_parseIntent"],"getParcelableExtra":["next_intent_parseIntent","next_intent"],"getIntExtra":["int_parseIntent","int"]}}
